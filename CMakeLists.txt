@@ -35,12 +35,16 @@ target_include_directories(Tunks PRIVATE
 )
 
 target_link_libraries(Tunks PRIVATE
-        ${SDL2_LIBRARY}
         ${SDL2_IMAGE_LIBRARY}
         ${SDL2_TTF_LIBRARY}
         ${GLEW_LIBRARIES}
         GL
 )
+
+target_link_libraries(
+        ${PROJECT_NAME} PRIVATE
+        SDL2::SDL2
+        SDL2::SDL2main)
 
 
 
