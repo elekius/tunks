@@ -5,14 +5,16 @@
 #include <string>
 #include <vector>
 #include <GL/glew.h>
+#include <memory>
 #include "Vertex.hpp"
+#include "VertexBuffer.hpp"
 
 class RenderModel {
 public:
     void createFromFile(const std::string &path);
     void draw();
 private:
-    GLuint m_bufferId;
+    std::unique_ptr<VertexBuffer> m_vertexBuffer;
     int m_numVertices;
 };
 

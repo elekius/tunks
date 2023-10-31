@@ -16,9 +16,14 @@ set(SOURCE_FILES
         src/rendering/Vertex.hpp
         src/Game.cpp
         src/Game.hpp
+        src/rendering/VertexBuffer.cpp
+        src/rendering/VertexBuffer.hpp
+        src/rendering/Shader.cpp
+        src/rendering/Shader.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc
+        src/Defines.hpp
 )
 
 include_directories(

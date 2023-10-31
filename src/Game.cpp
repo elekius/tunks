@@ -3,6 +3,7 @@
 #include "Game.hpp"
 #include "utils/Log.hpp"
 #include "rendering/RenderModel.hpp"
+#include "rendering/Shader.hpp"
 
 Game::~Game() {
     SDL_GL_DeleteContext(m_glContext);
@@ -31,6 +32,8 @@ void Game::run() {
     init();
     RenderModel model;
     model.createFromFile("");
+    Shader shader("rsc/shaders/basic/basic_shader.vert","rsc/shaders/basic/basic_shader.frag");
+    shader.bind();
     bool quit = false;
     SDL_Event event;
     while (!quit) {

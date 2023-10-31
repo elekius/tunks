@@ -9,19 +9,11 @@ void RenderModel::createFromFile(const std::string &path) {
             Vertex(0.5f,-0.5f,0.0f),
     };
     m_numVertices = vertices.size();
-    glGenBuffers(1,&m_bufferId);
-    glBindBuffer(GL_ARRAY_BUFFER,m_bufferId);
-    glBufferData(GL_ARRAY_BUFFER,vertices.size() * sizeof(Vertex),vertices.data(),GL_STATIC_DRAW);
+    m_vertexBuffer = std::make_unique<VertexBuffer>(vertices.data(),vertices.size());
 
-    glEnableVertexAttribArray(0);
-    // 0: Attribute location, 3 components of type GL_FLOAT, not normalized, stride is sizeof(Vertex), data starts at offsetof(Vertex, x).
-    glVertexAttribPointer(0, 3,GL_FLOAT, GL_FALSE, sizeof(Vertex),(void*)offsetof(Vertex, x));
-    //unbinding
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
 }
-
 void RenderModel::draw() {
-    glBindBuffer(GL_ARRAY_BUFFER,m_bufferId);
+    m_vertexBuffer->bind();
     glDrawArrays(GL_TRIANGLES,0,m_numVertices);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    m_vertexBuffer->unbind();
 }
