@@ -3,18 +3,43 @@ project(Tunks)
 
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(SDL2 REQUIRED)
+find_package(SDL2_image REQUIRED)
+find_package(SDL2_ttf REQUIRED)
+find_package(GLEW REQUIRED)
 
 set(SOURCE_FILES
     src/main.cpp
+    src/utils/Log.hpp
+)
+set(LIBRARY_FILES
+       libs/easyloggingpp/easylogging++.cc
+        src/rendering/Vertex.hpp
 )
 
 include_directories(
         src
         libs/nlohmannjson
+        libs/plog/include
+        libs/easyloggingpp
 )
 
-add_executable(Tunks ${SOURCE_FILES})
+add_executable(Tunks ${SOURCE_FILES} ${LIBRARY_FILES})
 
+target_link_libraries(Tunks PRIVATE
+        ${SDL2_LIBRARY}
+        ${SDL2_IMAGE_LIBRARY}
+        ${SDL2_TTF_LIBRARY}
+        ${GLEW_LIBRARIES}
+        GL
+)
+
+target_include_directories(Tunks PRIVATE
+        ${SDL2_INCLUDE_DIRS}
+        ${SDL2_IMAGE_INCLUDE_DIRS}
+        ${SDL2_TTF_INCLUDE_DIRS}
+        ${GLEW_INCLUDE_DIRS}
+)
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -25,7 +50,7 @@ elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
     message("Configuring for Release")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
     add_definitions(-DDEBUG)
-elseif (CMAKE_BUILD_TYPE STREQUAL "Game-Release")
+elseif (CMAKE_BUILD_TYPE STREQUAL "Disk-Release")
     message("Configuring for Game-Release")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -O3")
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -fomit-frame-pointer")
