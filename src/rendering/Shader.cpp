@@ -100,4 +100,8 @@ std::string Shader::readShaderFromFile(const std::string &path) {
     return shaderContent;
 }
 
+GLuint Shader::getShaderId() const {
+    return m_shaderId;
+}
+
 

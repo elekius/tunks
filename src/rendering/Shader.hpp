@@ -14,6 +14,9 @@ public:
 
     void bind();
     void unbind();
+
+    GLuint getShaderId() const;
+
 private:
     GLuint m_shaderId;
     GLuint createShader(const std::string& vertexShaderPath,const std::string& fragmentShader);

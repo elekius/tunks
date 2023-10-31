@@ -42,6 +42,13 @@ void Game::run() {
     double fps = 0.0;
     auto startTime = std::chrono::high_resolution_clock::now();
 
+    int colorUniformLocation = glGetUniformLocation(shader.getShaderId(),"u_color");
+    if(colorUniformLocation == -1) {
+        TK_LOG_E << "Unfiform location not found";
+    }else {
+        glUniform4f(colorUniformLocation,1.0f,0.0f,1.0f,1.0f);
+    }
+
     bool quit = false;
     SDL_Event event;
     while (!quit) {

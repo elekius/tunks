@@ -30,6 +30,7 @@ include_directories(
         src
         libs/nlohmannjson
         libs/easyloggingpp
+        libs/glm
 )
 
 add_executable(Tunks ${SOURCE_FILES} ${LIBRARY_FILES})

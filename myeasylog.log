@@ -1,0 +1,574 @@
+2023-10-31 12:58:21,009 FATAL [default] SDL initialization failed: 1
+2023-10-31 12:58:21,009 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/src/main.cpp:9]
+2023-10-31 12:58:53,588 FATAL [default] SDL initialization failed: 1
+2023-10-31 12:58:53,589 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/src/main.cpp:9]
+2023-10-31 13:00:06,078 FATAL [default] Window creation failed: 
+2023-10-31 13:00:06,078 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/src/main.cpp:13]
+2023-10-31 13:18:37,221 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 13:25:46,776 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:10:24,672 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:20:56,242 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:21:28,890 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:25:57,925 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:38:32,884 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:45:59,352 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 14:46:24,978 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 15:02:26,726 FATAL [default] GLEW initialization failed: Missing GL version
+2023-10-31 15:02:26,726 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/src/main.cpp:16]
+2023-10-31 15:03:37,230 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 15:07:45,686 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 15:07:57,498 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:41:41,559 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:41:46,943 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:58:02,456 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:58:40,780 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:58:54,116 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 18:59:51,456 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 19:10:23,227 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 19:10:45,085 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+
+
+#ifndef DEBUG
+    glDetachShader(program,vertexShaderId);
+    glDetachShader(program,fragmentShaderId);
+
+    glDeleteShader(vertexShaderId);
+    glDeleteShader(fragmentShaderId);
+#endif2023-10-31 20:05:28,024 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:05:28,025 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:05:28,025 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:05:28,025 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:10:37,800 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:10:37,800 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:10:37,800 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:10:37,800 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:10:37,806 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:10:44,792 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:10:44,792 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:10:44,793 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:10:44,793 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:10:44,794 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:22:48,595 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:22:48,596 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:22:48,596 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:22:48,596 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:22:48,641 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:24:51,774 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:24:51,774 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:24:51,775 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:24:51,775 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:24:51,797 ERROR [default] Shader compilation error: 0(10) : error C0000: syntax error, unexpected '=', expecting "::" at token "="
+
+2023-10-31 20:24:51,797 ERROR [default] Failed to compile the fragment shader.
+2023-10-31 20:24:51,797 INFO [default] Successfully created shader with id: 0
+2023-10-31 20:24:51,797 ERROR [default] Failed to create shader program.
+2023-10-31 20:25:12,148 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:25:12,148 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:25:12,149 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:25:12,149 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:25:12,174 ERROR [default] Shader compilation error: 0(10) : error C0000: syntax error, unexpected '=', expecting "::" at token "="
+
+2023-10-31 20:25:12,175 ERROR [default] Failed to compile the fragment shader.
+2023-10-31 20:25:12,175 ERROR [default] Failed to create shader program.
+2023-10-31 20:25:37,445 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:25:37,446 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:25:37,446 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:25:37,446 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:25:37,486 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:27:32,672 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:27:32,673 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:32,673 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:27:32,673 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:32,675 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:27:39,476 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:27:39,477 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:39,477 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:27:39,477 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:39,479 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:27:50,097 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:27:50,098 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:50,098 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:27:50,098 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:27:50,099 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:31:01,125 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:31:01,125 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:31:01,125 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:31:01,126 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:31:01,127 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:32:12,659 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:32:12,659 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:32:12,659 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:32:12,659 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:32:12,661 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:32:55,049 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:32:55,049 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:32:55,049 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:32:55,050 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:32:55,095 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:33:10,551 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:33:10,552 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:33:10,552 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:33:10,552 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:33:10,554 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:36:12,028 FATAL [default] GLEW initialization failed: Missing GL version
+2023-10-31 20:36:12,028 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/src/Game.cpp:24]
+2023-10-31 20:36:24,802 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:36:24,802 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:36:24,802 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:36:24,802 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:36:24,804 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:36:47,228 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:36:47,229 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:36:47,229 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:36:47,229 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:36:47,230 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:37:13,534 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:37:13,534 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:37:13,534 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:37:13,535 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:37:13,536 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:37:31,269 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:37:31,269 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:37:31,269 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:37:31,269 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:37:31,271 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:38:52,582 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:38:52,582 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:38:52,582 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:38:52,582 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:38:52,584 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:44:16,446 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:44:16,447 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:44:16,447 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:44:16,447 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:44:16,448 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:44:16,449 INFO [default] 0.000338215
+2023-10-31 20:44:16,449 INFO [default] 0.000466706
+2023-10-31 20:44:16,456 INFO [default] 0.00785873
+2023-10-31 20:44:16,461 INFO [default] 0.0124755
+2023-10-31 20:44:16,463 INFO [default] 0.0150763
+2023-10-31 20:44:16,470 INFO [default] 0.0220708
+2023-10-31 20:44:16,480 INFO [default] 0.0314004
+2023-10-31 20:44:16,487 INFO [default] 0.0389358
+2023-10-31 20:44:16,496 INFO [default] 0.0479967
+2023-10-31 20:44:16,507 INFO [default] 0.0585687
+2023-10-31 20:44:16,513 INFO [default] 0.0647552
+2023-10-31 20:44:16,520 INFO [default] 0.0718508
+2023-10-31 20:44:16,530 INFO [default] 0.0815591
+2023-10-31 20:44:16,537 INFO [default] 0.0883889
+2023-10-31 20:44:16,546 INFO [default] 0.0980553
+2023-10-31 20:44:16,563 INFO [default] 0.114713
+2023-10-31 20:44:16,580 INFO [default] 0.131544
+2023-10-31 20:44:16,597 INFO [default] 0.148126
+2023-10-31 20:44:16,613 INFO [default] 0.164768
+2023-10-31 20:44:16,630 INFO [default] 0.181442
+2023-10-31 20:44:16,647 INFO [default] 0.198224
+2023-10-31 20:44:16,664 INFO [default] 0.21523
+2023-10-31 20:44:16,680 INFO [default] 0.231975
+2023-10-31 20:44:16,697 INFO [default] 0.248625
+2023-10-31 20:44:16,714 INFO [default] 0.265331
+2023-10-31 20:44:16,730 INFO [default] 0.281626
+2023-10-31 20:44:16,747 INFO [default] 0.298284
+2023-10-31 20:44:16,763 INFO [default] 0.314832
+2023-10-31 20:44:16,780 INFO [default] 0.331661
+2023-10-31 20:44:16,796 INFO [default] 0.348033
+2023-10-31 20:44:16,813 INFO [default] 0.364658
+2023-10-31 20:44:16,830 INFO [default] 0.381415
+2023-10-31 20:44:16,847 INFO [default] 0.398159
+2023-10-31 20:44:16,863 INFO [default] 0.415066
+2023-10-31 20:44:16,880 INFO [default] 0.431679
+2023-10-31 20:44:16,897 INFO [default] 0.448901
+2023-10-31 20:44:16,913 INFO [default] 0.465003
+2023-10-31 20:44:16,930 INFO [default] 0.481546
+2023-10-31 20:44:16,947 INFO [default] 0.498341
+2023-10-31 20:44:16,963 INFO [default] 0.51458
+2023-10-31 20:44:16,980 INFO [default] 0.531402
+2023-10-31 20:44:16,996 INFO [default] 0.548066
+2023-10-31 20:44:17,013 INFO [default] 0.564542
+2023-10-31 20:44:17,030 INFO [default] 0.581356
+2023-10-31 20:44:17,046 INFO [default] 0.598029
+2023-10-31 20:44:17,063 INFO [default] 0.614664
+2023-10-31 20:44:17,080 INFO [default] 0.631608
+2023-10-31 20:44:17,097 INFO [default] 0.648371
+2023-10-31 20:44:17,113 INFO [default] 0.665054
+2023-10-31 20:44:17,130 INFO [default] 0.681715
+2023-10-31 20:44:17,147 INFO [default] 0.698343
+2023-10-31 20:44:17,163 INFO [default] 0.71457
+2023-10-31 20:44:17,180 INFO [default] 0.731279
+2023-10-31 20:44:17,196 INFO [default] 0.747712
+2023-10-31 20:44:17,213 INFO [default] 0.764423
+2023-10-31 20:44:17,229 INFO [default] 0.780993
+2023-10-31 20:44:17,246 INFO [default] 0.797897
+2023-10-31 20:44:17,263 INFO [default] 0.814332
+2023-10-31 20:44:17,279 INFO [default] 0.831018
+2023-10-31 20:44:17,296 INFO [default] 0.848052
+2023-10-31 20:44:17,313 INFO [default] 0.864659
+2023-10-31 20:44:17,330 INFO [default] 0.88132
+2023-10-31 20:44:17,346 INFO [default] 0.898027
+2023-10-31 20:44:17,363 INFO [default] 0.914715
+2023-10-31 20:44:17,380 INFO [default] 0.931322
+2023-10-31 20:44:17,396 INFO [default] 0.947748
+2023-10-31 20:44:17,413 INFO [default] 0.964339
+2023-10-31 20:44:17,430 INFO [default] 0.98113
+2023-10-31 20:44:17,446 INFO [default] 0.997857
+2023-10-31 20:44:17,463 INFO [default] 1.01429
+2023-10-31 20:44:17,479 INFO [default] 1.03093
+2023-10-31 20:44:17,496 INFO [default] 1.04755
+2023-10-31 20:44:17,513 INFO [default] 1.06457
+2023-10-31 20:44:17,530 INFO [default] 1.08128
+2023-10-31 20:44:17,546 INFO [default] 1.09797
+2023-10-31 20:44:17,563 INFO [default] 1.1146
+2023-10-31 20:44:17,580 INFO [default] 1.13128
+2023-10-31 20:44:17,596 INFO [default] 1.14781
+2023-10-31 20:44:17,613 INFO [default] 1.1643
+2023-10-31 20:44:17,629 INFO [default] 1.18106
+2023-10-31 20:44:17,646 INFO [default] 1.19783
+2023-10-31 20:44:17,663 INFO [default] 1.21418
+2023-10-31 20:44:17,679 INFO [default] 1.2309
+2023-10-31 20:44:17,696 INFO [default] 1.2476
+2023-10-31 20:44:17,713 INFO [default] 1.26435
+2023-10-31 20:44:17,730 INFO [default] 1.28128
+2023-10-31 20:44:17,746 INFO [default] 1.29801
+2023-10-31 20:44:17,763 INFO [default] 1.31465
+2023-10-31 20:44:17,780 INFO [default] 1.33121
+2023-10-31 20:44:17,796 INFO [default] 1.34795
+2023-10-31 20:44:17,813 INFO [default] 1.36459
+2023-10-31 20:44:17,829 INFO [default] 1.38107
+2023-10-31 20:44:17,846 INFO [default] 1.39762
+2023-10-31 20:44:17,863 INFO [default] 1.41421
+2023-10-31 20:44:17,879 INFO [default] 1.43102
+2023-10-31 20:44:17,896 INFO [default] 1.44774
+2023-10-31 20:44:17,913 INFO [default] 1.46439
+2023-10-31 20:44:17,929 INFO [default] 1.48087
+2023-10-31 20:44:17,946 INFO [default] 1.49785
+2023-10-31 20:44:17,963 INFO [default] 1.51456
+2023-10-31 20:44:17,980 INFO [default] 1.5313
+2023-10-31 20:44:17,996 INFO [default] 1.54782
+2023-10-31 20:44:18,013 INFO [default] 1.56449
+2023-10-31 20:44:18,029 INFO [default] 1.58104
+2023-10-31 20:44:18,046 INFO [default] 1.59783
+2023-10-31 20:44:18,063 INFO [default] 1.6143
+2023-10-31 20:44:18,079 INFO [default] 1.63085
+2023-10-31 20:44:18,096 INFO [default] 1.64764
+2023-10-31 20:44:18,113 INFO [default] 1.66422
+2023-10-31 20:44:18,129 INFO [default] 1.68091
+2023-10-31 20:44:18,146 INFO [default] 1.69756
+2023-10-31 20:44:18,163 INFO [default] 1.71458
+2023-10-31 20:44:18,180 INFO [default] 1.73122
+2023-10-31 20:44:18,197 INFO [default] 1.7485
+2023-10-31 20:44:18,213 INFO [default] 1.76464
+2023-10-31 20:44:18,230 INFO [default] 1.78122
+2023-10-31 20:44:18,246 INFO [default] 1.79768
+2023-10-31 20:44:18,263 INFO [default] 1.81437
+2023-10-31 20:44:18,279 INFO [default] 1.83098
+2023-10-31 20:44:18,296 INFO [default] 1.84759
+2023-10-31 20:44:18,313 INFO [default] 1.86434
+2023-10-31 20:44:18,329 INFO [default] 1.88089
+2023-10-31 20:44:18,346 INFO [default] 1.89765
+2023-10-31 20:44:18,363 INFO [default] 1.91438
+2023-10-31 20:44:18,380 INFO [default] 1.93122
+2023-10-31 20:44:18,396 INFO [default] 1.94789
+2023-10-31 20:44:18,413 INFO [default] 1.96449
+2023-10-31 20:44:18,430 INFO [default] 1.98116
+2023-10-31 20:44:18,446 INFO [default] 1.99787
+2023-10-31 20:44:18,463 INFO [default] 2.0147
+2023-10-31 20:44:18,480 INFO [default] 2.03111
+2023-10-31 20:44:18,496 INFO [default] 2.04772
+2023-10-31 20:44:18,513 INFO [default] 2.06424
+2023-10-31 20:44:18,529 INFO [default] 2.08093
+2023-10-31 20:44:18,546 INFO [default] 2.09753
+2023-10-31 20:44:18,563 INFO [default] 2.11434
+2023-10-31 20:44:18,579 INFO [default] 2.13086
+2023-10-31 20:44:18,596 INFO [default] 2.14787
+2023-10-31 20:44:18,613 INFO [default] 2.16453
+2023-10-31 20:44:18,630 INFO [default] 2.18113
+2023-10-31 20:44:18,646 INFO [default] 2.19788
+2023-10-31 20:44:18,664 INFO [default] 2.21532
+2023-10-31 20:44:18,680 INFO [default] 2.23117
+2023-10-31 20:44:18,696 INFO [default] 2.24776
+2023-10-31 20:44:18,713 INFO [default] 2.26427
+2023-10-31 20:44:18,729 INFO [default] 2.28089
+2023-10-31 20:44:18,746 INFO [default] 2.2978
+2023-10-31 20:44:18,763 INFO [default] 2.31436
+2023-10-31 20:45:11,253 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:45:11,254 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:45:11,254 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:45:11,254 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:45:11,256 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:45:32,795 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:45:32,796 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:45:32,796 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:45:32,796 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:45:32,797 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:46:31,739 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:46:31,739 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:46:31,739 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:46:31,739 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:46:31,741 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:47:05,700 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:47:05,700 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:47:05,700 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:47:05,700 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:47:05,702 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:51:06,323 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:51:06,324 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:51:06,324 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:51:06,324 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:51:06,326 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:52:06,739 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:52:06,740 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:52:06,740 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:52:06,740 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:52:06,741 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:52:22,516 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:52:22,516 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:52:22,517 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:52:22,517 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:52:22,518 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:53:26,514 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:53:26,514 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:53:26,514 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:53:26,514 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:53:26,516 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:56:01,129 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:56:01,129 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:56:01,129 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:56:01,129 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:56:01,131 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:56:16,328 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:56:16,328 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:56:16,328 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:56:16,329 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:56:16,330 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:57:09,413 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:57:09,413 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:57:09,413 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:57:09,414 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:57:09,415 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:58:18,746 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:58:18,747 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:58:18,747 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:58:18,747 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:58:18,748 INFO [default] Successfully created shader with id: 1
+2023-10-31 20:58:33,246 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 20:58:33,246 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:58:33,247 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 20:58:33,247 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 20:58:33,248 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:00:16,421 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:00:16,421 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:00:16,421 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:00:16,422 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:00:16,423 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:00:41,773 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:00:41,773 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:00:41,773 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:00:41,773 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:00:41,775 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:01:55,458 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:01:55,458 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:01:55,458 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:01:55,459 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:01:55,460 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:02:29,828 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:02:29,829 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:02:29,829 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:02:29,829 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:02:29,831 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:03:03,742 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:03:03,742 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:03,743 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:03:03,743 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:03,744 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:03:14,489 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:03:14,490 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:14,490 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:03:14,490 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:14,491 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:03:22,342 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:03:22,342 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:22,342 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:03:22,342 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:03:22,344 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:10:09,761 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:10:09,761 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:09,761 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:10:09,762 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:09,764 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:10:18,358 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:10:18,358 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:18,358 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:10:18,358 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:18,360 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:10:41,575 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:10:41,576 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:41,576 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:10:41,576 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:10:41,578 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:52:21,316 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:52:21,316 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:52:21,316 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:52:21,316 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:52:21,320 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:53:28,683 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:53:28,683 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:53:28,683 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:53:28,684 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:53:28,685 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:53:42,422 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:53:42,422 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:53:42,422 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:53:42,423 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:53:42,424 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:58:22,143 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:58:22,144 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:22,144 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:58:22,144 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:22,146 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:58:51,625 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:58:51,626 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:51,626 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:58:51,626 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:51,628 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:58:58,897 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:58:58,897 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:58,897 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:58:58,898 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:58:58,899 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:59:02,752 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:59:02,752 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:59:02,752 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:59:02,752 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:59:02,754 INFO [default] Successfully created shader with id: 1
+2023-10-31 21:59:20,305 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 21:59:20,306 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:59:20,306 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 21:59:20,306 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 21:59:20,307 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:06:48,440 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:06:48,441 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:06:48,441 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:06:48,441 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:06:48,442 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:09:44,576 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:09:44,577 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:09:44,577 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:09:44,577 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:09:44,579 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:10:45,491 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:10:45,491 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:10:45,491 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:10:45,492 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:10:45,493 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:10:48,868 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:10:48,868 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:10:48,869 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:10:48,869 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:10:48,870 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:17:33,704 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:17:33,705 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:17:33,705 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:17:33,705 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:17:33,707 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:18:58,403 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:18:58,403 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:18:58,403 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:18:58,403 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:18:58,405 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:19:14,713 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:19:14,713 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:19:14,713 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:19:14,714 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:19:14,715 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:19:22,735 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:19:22,735 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:19:22,735 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:19:22,736 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:19:22,737 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:22:24,401 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:22:24,402 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:22:24,402 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:22:24,402 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:22:24,404 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:22:24,404 INFO [default] [OpenGL API] [INFO]: Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:22:56,875 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:22:56,876 INFO [default] [OpenGL]Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:22:56,876 INFO [default] [OpenGL]Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:22:56,876 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:22:56,876 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:22:56,876 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:22:56,877 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:22:56,878 INFO [default] [OpenGL]Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:24:04,295 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:24:04,296 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:24:04,296 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:24:04,296 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:24:04,296 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:24:04,296 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:24:04,298 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:24:04,298 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:30:34,185 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:30:34,185 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:30:34,185 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:30:34,185 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:30:34,185 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:30:34,186 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:30:34,233 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:30:34,234 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:31:23,757 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:31:23,757 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:31:23,757 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:31:23,758 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:31:23,758 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:31:23,758 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:31:23,759 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:31:23,759 ERROR [default] Unfiform location not found
+2023-10-31 22:31:23,760 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:32:20,129 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:32:20,130 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:32:20,130 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:32:20,130 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:32:20,130 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:32:20,130 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:32:20,132 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:32:20,132 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:35:06,837 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:35:06,837 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:06,837 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:06,837 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:06,837 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:35:06,838 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:06,839 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:35:06,839 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:35:21,556 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:35:21,557 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:21,557 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:21,557 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:21,557 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:35:21,557 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:21,559 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:35:21,559 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:35:33,944 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:35:33,945 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:33,945 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:33,945 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:33,945 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:35:33,945 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:33,947 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:35:33,947 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:35:51,746 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:35:51,747 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:51,747 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:35:51,747 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:51,747 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:35:51,748 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:35:51,749 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:35:51,750 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-10-31 22:36:06,045 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-10-31 22:36:06,046 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:36:06,046 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-10-31 22:36:06,046 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:36:06,046 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-10-31 22:36:06,046 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-10-31 22:36:06,048 INFO [default] Successfully created shader with id: 1
+2023-10-31 22:36:06,048 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
