@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.27)
+cmake_minimum_required(VERSION 3.26)
 project(Tunks)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -9,22 +9,30 @@ find_package(SDL2_ttf REQUIRED)
 find_package(GLEW REQUIRED)
 
 set(SOURCE_FILES
-    src/main.cpp
-    src/utils/Log.hpp
+        src/main.cpp
+        src/utils/Log.hpp
+        src/rendering/RenderModel.cpp
+        src/rendering/RenderModel.hpp
+        src/rendering/Vertex.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc
-        src/rendering/Vertex.hpp
 )
 
 include_directories(
         src
         libs/nlohmannjson
-        libs/plog/include
         libs/easyloggingpp
 )
 
 add_executable(Tunks ${SOURCE_FILES} ${LIBRARY_FILES})
+
+target_include_directories(Tunks PRIVATE
+        ${SDL2_INCLUDE_DIRS}
+        ${SDL2_IMAGE_INCLUDE_DIRS}
+        ${SDL2_TTF_INCLUDE_DIRS}
+        ${GLEW_INCLUDE_DIRS}
+)
 
 target_link_libraries(Tunks PRIVATE
         ${SDL2_LIBRARY}
@@ -34,12 +42,6 @@ target_link_libraries(Tunks PRIVATE
         GL
 )
 
-target_include_directories(Tunks PRIVATE
-        ${SDL2_INCLUDE_DIRS}
-        ${SDL2_IMAGE_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS}
-        ${GLEW_INCLUDE_DIRS}
-)
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
