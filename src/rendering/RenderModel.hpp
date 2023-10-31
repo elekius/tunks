@@ -15,7 +15,6 @@ public:
     void draw();
 private:
     std::unique_ptr<VertexBuffer> m_vertexBuffer;
-    int m_numVertices;
 };
 
 

@@ -5,8 +5,7 @@
 #include <iostream>
 #include "VertexBuffer.hpp"
 #include "Vertex.hpp"
-
-VertexBuffer::VertexBuffer(void *data, uint32 numVertices) {
+VertexBuffer::VertexBuffer(void *data, uint32 numVertices, std::vector<uint32> indices) {
     //create vao
     glGenVertexArrays(1,&m_vaoId);
     glBindVertexArray(m_vaoId);
@@ -18,8 +17,14 @@ VertexBuffer::VertexBuffer(void *data, uint32 numVertices) {
 
     //add vertexBuffer attributes
     glEnableVertexAttribArray(0);
-    // 0: Attribute location, 3 components of type GL_FLOAT, not normalized, stride is sizeof(Vertex), data starts at offsetof(Vertex, x).
     glVertexAttribPointer(0, 3,GL_FLOAT, GL_FALSE, sizeof(Vertex),(void*)offsetof(Vertex, x));
+    glEnableVertexAttribArray(1);
+    glVertexAttribPointer(1, 4,GL_FLOAT, GL_FALSE, sizeof(Vertex),(void*)offsetof(Vertex, r));
+    //create the index buffer
+    m_numIndices = indices.size();
+    glGenBuffers(1,&m_indexBufferId);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,m_indexBufferId);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER,m_numIndices*sizeof(indices[0]),indices.data(),GL_STATIC_DRAW);
     //unbind the current vao.
     unbind();
 }
@@ -28,6 +33,7 @@ VertexBuffer::VertexBuffer(void *data, uint32 numVertices) {
 VertexBuffer::~VertexBuffer() {
     glDeleteVertexArrays(1,&m_bufferId);
     glDeleteBuffers(1,&m_bufferId);
+    glDeleteBuffers(1,&m_indexBufferId);
 }
 
 void VertexBuffer::bind() const {
@@ -37,3 +43,8 @@ void VertexBuffer::bind() const {
 void VertexBuffer::unbind() const {
     glBindVertexArray(0);
 }
+
+uint32 VertexBuffer::getNumIndices() const {
+    return m_numIndices;
+}
+

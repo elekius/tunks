@@ -2,6 +2,7 @@
 #define TUNKS_LOG_HPP
 
 #include <easylogging++.h>
+#include <GL/glew.h>
 
 #define TK_INIT_LOG \
     el::Configurations conf; \
@@ -14,6 +15,7 @@
 #define TK_LOG_W LOG(WARNING)
 #define TK_LOG_E LOG(ERROR)
 #define TK_LOG_F LOG(FATAL)
+
 
 
 #endif

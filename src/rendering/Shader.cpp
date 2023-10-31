@@ -4,9 +4,10 @@
 Shader::Shader(const std::string &vertexShaderPath, const std::string &fragmentShader) {
     TK_LOG << "Create shader program for vertex: " << vertexShaderPath << " and: " << fragmentShader;
     m_shaderId = createShader(vertexShaderPath,fragmentShader);
-    TK_LOG << "Successfully created shader with id: " << m_shaderId;
     if (m_shaderId == 0) {
         TK_LOG_E << "Failed to create shader program.";
+    }else {
+        TK_LOG << "Successfully created shader with id: " << m_shaderId;
     }
 }
 
