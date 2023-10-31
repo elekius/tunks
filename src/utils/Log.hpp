@@ -3,8 +3,6 @@
 
 #include <easylogging++.h>
 
-INITIALIZE_EASYLOGGINGPP
-
 #define TK_INIT_LOG \
     el::Configurations conf; \
     conf.setToDefault(); \

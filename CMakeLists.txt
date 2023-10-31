@@ -14,6 +14,8 @@ set(SOURCE_FILES
         src/rendering/RenderModel.cpp
         src/rendering/RenderModel.hpp
         src/rendering/Vertex.hpp
+        src/Game.cpp
+        src/Game.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc
@@ -44,7 +46,8 @@ target_link_libraries(Tunks PRIVATE
 target_link_libraries(
         ${PROJECT_NAME} PRIVATE
         SDL2::SDL2
-        SDL2::SDL2main)
+        SDL2::SDL2main
+)
 
 
 
