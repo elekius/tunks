@@ -572,3 +572,258 @@
 2023-10-31 22:36:06,046 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
 2023-10-31 22:36:06,048 INFO [default] Successfully created shader with id: 1
 2023-10-31 22:36:06,048 INFO [default] [OpenGL] Program/shader state performance warning: Vertex shader in program 1 is being recompiled based on GL state.
+2023-11-01 03:46:46,306 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:46:46,306 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:46:46,307 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:46:46,307 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:46:46,308 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:46:46,308 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:46:46,309 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:46:46,309 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:46:46,309 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:46:46,310 INFO [default] Successfully created the model
+2023-11-01 03:46:46,310 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:46:46,310 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:46:46,310 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:46:46,310 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:46:46,310 INFO [default] Successfully created the model
+2023-11-01 03:47:01,036 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:47:01,036 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:47:01,037 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:47:01,037 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:47:01,038 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:47:01,039 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:47:01,039 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:47:01,040 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:01,040 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:01,040 INFO [default] Successfully created the model
+2023-11-01 03:47:01,040 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:47:01,040 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:47:01,040 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:01,040 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:01,040 INFO [default] Successfully created the model
+2023-11-01 03:47:36,969 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:47:36,969 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:47:36,969 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:47:36,969 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:47:36,972 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:47:36,972 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:47:36,972 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:47:36,973 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:36,973 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:36,973 INFO [default] Successfully created the model
+2023-11-01 03:47:36,973 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:47:36,973 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:47:36,974 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:36,974 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:47:36,974 INFO [default] Successfully created the model
+2023-11-01 03:48:47,485 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:48:47,485 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:48:47,485 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:48:47,486 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:48:47,487 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:48:47,487 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:48:47,487 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:48:47,488 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:48:47,488 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:48:47,488 INFO [default] Successfully created the model
+2023-11-01 03:48:47,488 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:48:47,488 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:48:47,489 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:48:47,489 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:48:47,489 INFO [default] Successfully created the model
+2023-11-01 03:49:09,569 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:49:09,569 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:49:09,569 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:49:09,569 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:49:09,571 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:49:09,571 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:49:09,571 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:49:09,572 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:09,572 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:09,572 INFO [default] Successfully created the model
+2023-11-01 03:49:09,572 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:49:09,572 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:49:09,573 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:09,573 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:09,573 INFO [default] Successfully created the model
+2023-11-01 03:49:42,303 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:49:42,303 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:49:42,303 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:49:42,303 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:49:42,305 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:49:42,305 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:49:42,305 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:49:42,305 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:42,306 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:42,306 INFO [default] Successfully created the model
+2023-11-01 03:49:42,306 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:49:42,306 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:49:42,306 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:42,306 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:49:42,306 INFO [default] Successfully created the model
+2023-11-01 03:50:00,269 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:50:00,269 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:00,269 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:50:00,269 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:00,271 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:50:00,271 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:00,271 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:00,272 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:00,272 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:00,272 INFO [default] Successfully created the model
+2023-11-01 03:50:00,272 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:00,272 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:00,273 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:00,273 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:00,273 INFO [default] Successfully created the model
+2023-11-01 03:50:12,766 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:50:12,767 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:12,767 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:50:12,767 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:12,769 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:50:12,769 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:12,769 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:12,769 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:12,770 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:12,770 INFO [default] Successfully created the model
+2023-11-01 03:50:12,770 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:12,770 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:12,770 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:12,770 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:12,770 INFO [default] Successfully created the model
+2023-11-01 03:50:25,004 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:50:25,004 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:25,004 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:50:25,005 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:25,006 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:50:25,006 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:25,006 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:25,007 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:25,007 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:25,007 INFO [default] Successfully created the model
+2023-11-01 03:50:25,007 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:25,008 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:25,008 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:25,008 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:25,008 INFO [default] Successfully created the model
+2023-11-01 03:50:42,131 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:50:42,131 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:42,131 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:50:42,132 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:42,133 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:50:42,133 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:42,133 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:42,134 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:42,134 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:42,134 INFO [default] Successfully created the model
+2023-11-01 03:50:42,134 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:42,134 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:42,135 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:42,135 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:42,135 INFO [default] Successfully created the model
+2023-11-01 03:50:54,696 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:50:54,697 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:54,697 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:50:54,697 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:50:54,698 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:50:54,699 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:54,699 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:54,699 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:54,699 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:54,699 INFO [default] Successfully created the model
+2023-11-01 03:50:54,700 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:50:54,700 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:50:54,700 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:54,700 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:50:54,700 INFO [default] Successfully created the model
+2023-11-01 03:51:53,792 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:51:53,792 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:51:53,792 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:51:53,792 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:51:53,794 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:51:53,794 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:51:53,794 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:51:53,795 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:51:53,795 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:51:53,795 INFO [default] Successfully created the model
+2023-11-01 03:51:53,795 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:51:53,795 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:51:53,795 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:51:53,795 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:51:53,795 INFO [default] Successfully created the model
+2023-11-01 03:52:10,628 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:52:10,628 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:10,628 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:52:10,628 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:10,630 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:52:10,630 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:10,630 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:10,631 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:10,631 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:10,631 INFO [default] Successfully created the model
+2023-11-01 03:52:10,631 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:10,631 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:10,631 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:10,632 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:10,632 INFO [default] Successfully created the model
+2023-11-01 03:52:22,021 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:52:22,021 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:22,021 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:52:22,022 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:22,023 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:52:22,023 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:22,023 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:22,024 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:22,024 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:22,024 INFO [default] Successfully created the model
+2023-11-01 03:52:22,025 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:22,025 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:22,025 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:22,025 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:22,025 INFO [default] Successfully created the model
+2023-11-01 03:52:32,015 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:52:32,016 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:32,016 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:52:32,016 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:32,018 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:52:32,018 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:32,018 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:32,018 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:32,019 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:32,019 INFO [default] Successfully created the model
+2023-11-01 03:52:32,019 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:32,019 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:32,019 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:32,019 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:32,019 INFO [default] Successfully created the model
+2023-11-01 03:52:42,614 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:52:42,614 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:42,615 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:52:42,615 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:42,616 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:52:42,616 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:42,616 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:42,617 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:42,617 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:42,617 INFO [default] Successfully created the model
+2023-11-01 03:52:42,617 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:42,618 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:42,618 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:42,618 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:42,618 INFO [default] Successfully created the model
+2023-11-01 03:52:57,667 INFO [default] Running with OpenGL version: 4.6.0 NVIDIA 535.113.01
+2023-11-01 03:52:57,667 INFO [default] Create shader program for vertex: rsc/shaders/basic/basic_shader.vert and: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:57,667 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.vert
+2023-11-01 03:52:57,667 INFO [default] Successfully read shader content from file: rsc/shaders/basic/basic_shader.frag
+2023-11-01 03:52:57,669 INFO [default] Successfully created shader with id: 1
+2023-11-01 03:52:57,669 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:57,669 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:57,670 INFO [default] [OpenGL] Buffer detailed info: Buffer object 1 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:57,670 INFO [default] [OpenGL] Buffer detailed info: Buffer object 2 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:57,670 INFO [default] Successfully created the model
+2023-11-01 03:52:57,670 INFO [default] Try loading model file: rsc/models/test-monkey.tk
+2023-11-01 03:52:57,670 INFO [default] Successfully read info for model. Has 2865 vertices and 2901 indices
+2023-11-01 03:52:57,670 INFO [default] [OpenGL] Buffer detailed info: Buffer object 3 (bound to GL_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:57,671 INFO [default] [OpenGL] Buffer detailed info: Buffer object 4 (bound to GL_ELEMENT_ARRAY_BUFFER_ARB, usage hint is GL_STATIC_DRAW) will use VIDEO memory as the source for buffer object operations.
+2023-11-01 03:52:57,671 INFO [default] Successfully created the model

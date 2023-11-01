@@ -1,5 +1,6 @@
 #ifndef TUNKS_DEFINES_HPP
 #define TUNKS_DEFINES_HPP
+
 #include <cstdint>
 
 typedef int8_t int8;

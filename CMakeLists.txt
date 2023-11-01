@@ -11,20 +11,20 @@ find_package(GLEW REQUIRED)
 set(SOURCE_FILES
         src/Defines.hpp
         src/main.cpp
-        src/utils/Log.hpp
-        src/rendering/RenderModel.cpp
-        src/rendering/RenderModel.hpp
-        src/rendering/Vertex.hpp
-        src/Game.cpp
-        src/Game.hpp
-        src/rendering/VertexBuffer.cpp
-        src/rendering/VertexBuffer.hpp
-        src/rendering/Shader.cpp
-        src/rendering/Shader.hpp
-        src/rendering/Camera.cpp
-        src/rendering/Camera.hpp
-        src/rendering/RenderWindow.cpp
-        src/rendering/RenderWindow.hpp
+        src/core/utils/Log.hpp
+        src/core/rendering/RenderModel.cpp
+        src/core/rendering/RenderModel.hpp
+        src/core/rendering/Vertex.hpp
+        src/core/Game.cpp
+        src/core/Game.hpp
+        src/core/rendering/VertexBuffer.cpp
+        src/core/rendering/VertexBuffer.hpp
+        src/core/rendering/Shader.cpp
+        src/core/rendering/Shader.hpp
+        src/core/rendering/Camera.cpp
+        src/core/rendering/Camera.hpp
+        src/core/rendering/RenderWindow.cpp
+        src/core/rendering/RenderWindow.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc

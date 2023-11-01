@@ -1,20 +1,22 @@
 #include <GL/glew.h>
 #include <chrono>
 #include "Game.hpp"
-#include "utils/Log.hpp"
-#include "rendering/RenderModel.hpp"
+#include "core/utils/Log.hpp"
+#include "core/rendering/RenderModel.hpp"
 
 Game::~Game() {
 }
 
-Game::Game() : m_window(std::make_shared<RenderWindow>(800,600)){}
+Game::Game() : m_window(std::make_shared<RenderWindow>(800, 600)) {}
 
 void Game::run() {
     init();
     RenderModel model;
     model.createFromFile("rsc/models/test-monkey.tk");
-    model.translate(glm::vec3(0.0f,-1.0f,0.0f));
-
+    model.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
+    RenderModel model2;
+    model2.createFromFile("rsc/models/test-monkey.tk");
+    model2.translate(glm::vec3(0.5f, -2.0f, 0.0f));
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;
@@ -29,8 +31,10 @@ void Game::run() {
         prevTime = currentTime;
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        model.rotate(1.0f*deltaTime, glm::vec3(0, 1, 0));
+        model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+        model2.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
         m_window->draw(model);
+        m_window->draw(model2);
         m_window->display();
 
         frameCount++;
@@ -52,10 +56,12 @@ void Game::run() {
     }
 }
 
-void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar* message, const void* userParam) {
+void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message,
+                         const void *userParam) {
 
     TK_LOG << "[OpenGL] " << message;
 }
+
 void Game::init() {
 #ifdef DEBUG
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS,SDL_GL_CONTEXT_DEBUG_FLAG);

@@ -4,12 +4,22 @@
 
 #include <memory>
 #include <SDL2/SDL.h>
-#include "rendering/RenderWindow.hpp"
+#include "core/rendering/RenderWindow.hpp"
 
+/**
+ * The main game class that contains the main loop and the window
+ * @author ChikyuKido
+ */
 class Game {
 public:
     Game();
+    /**
+     * starts the game
+     */
     void run();
+    /**
+     * init the basic stuff
+     */
     void init();
     virtual ~Game();
 private:
