@@ -24,6 +24,12 @@ public:
     [[nodiscard]] const glm::mat4 &getViewProj() const;
 
     /**
+     * Returns the view of the camera
+     * @return
+     */
+    [[nodiscard]] const glm::mat4 &getView() const;
+
+    /**
      * Updates the view projection each frame
      */
     void update();

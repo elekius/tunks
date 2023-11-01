@@ -40,7 +40,11 @@ RenderWindow::~RenderWindow() {
 void RenderWindow::draw(RenderModel &model) {
     m_camera->update();
     m_shader->bind();
+    glm::mat4 modelView = m_camera->getView() * model.getMatrix();
+    glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
     m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * model.getMatrix());
+    m_shader->setUniformMatrix4fv("u_modelView", modelView);
+    m_shader->setUniformMatrix4fv("u_invModelView", invModelView);
     model.draw();
     m_shader->unbind();
 }
@@ -56,5 +60,8 @@ void RenderWindow::init() {
     SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
     SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
     SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
+
+    //glEnable(GL_CULL_FACE);
+    glEnable(GL_DEPTH_TEST);
 }
 

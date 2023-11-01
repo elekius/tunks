@@ -15,8 +15,13 @@ void Game::run() {
     model.createFromFile("rsc/models/test-monkey.tk");
     model.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
     RenderModel model2;
-    model2.createFromFile("rsc/models/test-monkey.tk");
-    model2.translate(glm::vec3(0.5f, -2.0f, 0.0f));
+    model2.createFromFile("rsc/models/test-cube.tk");
+    model2.translate(glm::vec3(0.5f, -3.0f, 2.0f));
+    RenderModel model3;
+    model3.createFromFile("rsc/models/enemy-tank.tk");
+    model3.translate(glm::vec3(0.5f, -1.0f, 2.0f));
+    model3.rotate(45,glm::vec3(0,1,0));
+
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;
@@ -30,11 +35,11 @@ void Game::run() {
         float deltaTime = std::chrono::duration<float>(currentTime - prevTime).count();
         prevTime = currentTime;
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
-        model2.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
         m_window->draw(model);
         m_window->draw(model2);
+        m_window->draw(model3);
         m_window->display();
 
         frameCount++;
@@ -58,7 +63,6 @@ void Game::run() {
 
 void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message,
                          const void *userParam) {
-
     TK_LOG << "[OpenGL] " << message;
 }
 

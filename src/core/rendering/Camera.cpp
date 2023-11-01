@@ -23,3 +23,7 @@ void Camera::rotateY(float degrees) {
     m_view = rotation * m_view;
     update();
 }
+
+const glm::mat4 &Camera::getView() const {
+    return m_view;
+}

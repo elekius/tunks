@@ -1,17 +1,10 @@
 #ifndef TUNKS_VERTEX_HPP
 #define TUNKS_VERTEX_HPP
 
+#include <glm/glm.hpp>
 struct Vertex {
-    float x;
-    float y;
-    float z;
-
-    float r;
-    float g;
-    float b;
-    float a;
-
-
+    glm::vec3 position;
+    glm::vec3 normal;
 };
 
 #endif
