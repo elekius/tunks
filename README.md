@@ -3,18 +3,18 @@
 ## What this project is
 This project aims to recreate Wii Tanks in C++  and SDL2 while adding additional features for the best possible Wii Tanks experience.
 
-## What this project is not 
+### What this project is not 
 This project is not a decompilation or port of Wii Tanks.
 
 ## Status and Goals
 
-- [ ] Implement all features available in the original game
+- [ ] _Implement all features available in the original game_
     - [ ]  Basic gameplay
     - [ ]  120 maps
     - [ ]  Accurate  enemy tank AI
     - [ ]  Local co-op
     - [ ]  Wii-mote support
-- [ ] Additional goals
+- [ ] _Additional goals_
     - [ ] Custom assets
     - [ ] Mod Support + Mod Loader
     - [ ] Online co-op
@@ -24,10 +24,10 @@ This project is not a decompilation or port of Wii Tanks.
     - [ ] QoL improvements
 
 ## FAQ
-[Comming soon](docs/faq.md)
+[Coming soon](docs/faq.md)
 
 ## Building
-[Comming soon](docs/build.md)
+[Coming soon](docs/build.md)
 
 ## Contributions
 
