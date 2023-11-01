@@ -4,7 +4,7 @@
 
 #include <memory>
 #include <SDL2/SDL.h>
-#include "core/rendering/RenderWindow.hpp"
+#include "TK/engine/graphics/RenderWindow.hpp"
 
 /**
  * The main game class that contains the main loop and the window

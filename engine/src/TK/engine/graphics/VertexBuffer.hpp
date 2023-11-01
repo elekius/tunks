@@ -1,7 +1,7 @@
 #ifndef TUNKS_VERTEXBUFFER_HPP
 #define TUNKS_VERTEXBUFFER_HPP
 
-#include "Defines.hpp"
+#include "../Defines.hpp"
 #include "Vertex.hpp"
 #include <GL/glew.h>
 #include <vector>
@@ -29,7 +29,6 @@ public:
      * unbind the vao
      */
     void unbind() const;
-
     /**
      * Returns the number of the indices.
      * Mainly used for the glDrawElements

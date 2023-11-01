@@ -1,5 +1,5 @@
 #include "Shader.hpp"
-#include "core/utils/Log.hpp"
+#include "engine/utils/Log.hpp"
 
 Shader::Shader(const std::string &vertexShaderPath, const std::string &fragmentShader) {
     TK_LOG << "Create shader program for vertex: " << vertexShaderPath << " and: " << fragmentShader;

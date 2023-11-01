@@ -1,9 +1,9 @@
 #include <GL/glew.h>
 #include <chrono>
+#include <iostream>
 #include "Game.hpp"
-#include "core/utils/Log.hpp"
-#include "core/rendering/Mesh.hpp"
-#include "core/rendering/RenderModel.hpp"
+#include "TK/engine/graphics/RenderWindow.hpp"
+#include "TK/engine/utils/Log.hpp"
 
 Game::~Game() {
 }
@@ -16,7 +16,7 @@ void Game::run() {
     model.loadFromFile("rsc/models/tree.tk");
     model.translate(glm::vec3(0.0f, -1.0f, 1.0f));
     RenderModel model2;
-    model2.loadFromFile("rsc/models/test-monkey.tk");
+    model2.loadFromFile("rsc/models/enemy-tank.tk");
     model2.translate(glm::vec3(0.0f, -2.0f, 1.0f));
 
 
@@ -54,9 +54,7 @@ void Game::run() {
             if (event.type == SDL_QUIT) {
                 quit = true;
             }
-            m_window->handleEvent(event,deltaTime);
         }
-        m_window->handleEvent(event,deltaTime);
     }
 }
 

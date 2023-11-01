@@ -1,7 +1,5 @@
 #include "Mesh.hpp"
-#include "core/utils/Log.hpp"
 #include "Shader.hpp"
-#include <fstream>
 #include <GL/glew.h>
 
 void Mesh::draw(const std::shared_ptr<Shader>& shader) {

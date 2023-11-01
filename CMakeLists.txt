@@ -8,76 +8,11 @@ find_package(SDL2_image REQUIRED)
 find_package(SDL2_ttf REQUIRED)
 find_package(GLEW REQUIRED)
 
-set(SOURCE_FILES
-        src/Defines.hpp
-        src/main.cpp
-        src/core/utils/Log.hpp
-        src/core/rendering/Mesh.cpp
-        src/core/rendering/Mesh.hpp
-        src/core/rendering/Vertex.hpp
-        src/core/Game.cpp
-        src/core/Game.hpp
-        src/core/rendering/VertexBuffer.cpp
-        src/core/rendering/VertexBuffer.hpp
-        src/core/rendering/Shader.cpp
-        src/core/rendering/Shader.hpp
-        src/core/rendering/Camera.cpp
-        src/core/rendering/Camera.hpp
-        src/core/rendering/RenderWindow.cpp
-        src/core/rendering/RenderWindow.hpp
-        src/core/rendering/RenderModel.cpp
-        src/core/rendering/RenderModel.hpp
-        src/core/rendering/FPSCamera.hpp
-)
-set(LIBRARY_FILES
-       libs/easyloggingpp/easylogging++.cc
-
-)
-
 include_directories(
-        src
         libs/nlohmannjson
         libs/easyloggingpp
         libs/glm
 )
 
-add_executable(Tunks ${SOURCE_FILES} ${LIBRARY_FILES})
-
-target_include_directories(Tunks PRIVATE
-        ${SDL2_INCLUDE_DIRS}
-        ${SDL2_IMAGE_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS}
-        ${GLEW_INCLUDE_DIRS}
-)
-
-target_link_libraries(Tunks PRIVATE
-        ${SDL2_IMAGE_LIBRARY}
-        ${SDL2_TTF_LIBRARY}
-        ${GLEW_LIBRARIES}
-        GL
-)
-
-target_link_libraries(
-        ${PROJECT_NAME} PRIVATE
-        SDL2::SDL2
-        SDL2::SDL2main
-)
-
-
-
-if (CMAKE_BUILD_TYPE STREQUAL "Debug")
-    message("Configuring for Debug")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g")
-    add_definitions(-DDEBUG)
-elseif (CMAKE_BUILD_TYPE STREQUAL "Release")
-    message("Configuring for Release")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O2")
-    add_definitions(-DDEBUG)
-elseif (CMAKE_BUILD_TYPE STREQUAL "Dist-Release")
-    message("Configuring for Game-Release")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -O3")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -fomit-frame-pointer")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -flto")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS_RELEASE} -DNDEBUG")
-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -ffast-math")
-endif ()
+add_subdirectory(engine)
+add_subdirectory(game)

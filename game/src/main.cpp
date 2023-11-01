@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
-#include "core/utils/Log.hpp"
-#include "core/Game.hpp"
+#include "easylogging++.h"
+#include "TK/engine/utils/Log.hpp"
+#include "Game.hpp"
 
 INITIALIZE_EASYLOGGINGPP
 

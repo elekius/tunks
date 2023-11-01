@@ -1,6 +1,6 @@
-#include <glm/gtc/matrix_transform.hpp>
+#include "glm/gtc/matrix_transform.hpp"
 #include "RenderModel.hpp"
-#include "core/utils/Log.hpp"
+#include "engine/utils/Log.hpp"
 
 RenderModel::RenderModel() : m_matrix(1.0f) {}
 
@@ -10,6 +10,7 @@ void RenderModel::loadFromFile(const std::string &path) {
     if (!input.is_open()) {
         TK_LOG_E << "Error reading model file: " << path;
         return;
+
     }
     uint32 numMeshes = 0;
     input.read((char *) &numMeshes, sizeof(uint32));

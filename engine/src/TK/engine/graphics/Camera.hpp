@@ -17,17 +17,6 @@ public:
      */
     Camera(float fov, float width, float height);
 
-    /**
-     * Creates the view projection for the model.
-     * @return The combined view and projection
-     */
-    [[nodiscard]] const glm::mat4 &getViewProj() const;
-
-    /**
-     * Returns the view of the camera
-     * @return
-     */
-    [[nodiscard]] const glm::mat4 &getView() const;
 
     /**
      * Updates the view projection each frame
@@ -44,7 +33,19 @@ public:
      * Rotates the camera along the y axis.
      * @param degrees the angle in degrees
      */
-    void rotateY(float degrees);
+    void rotate(float degrees,glm::vec3 axis);
+
+    /**
+ * Creates the view projection for the model.
+ * @return The combined view and projection
+ */
+    [[nodiscard]] const glm::mat4 &getViewProj() const;
+
+    /**
+     * Returns the view of the camera
+     * @return
+     */
+    [[nodiscard]] const glm::mat4 &getView() const;
 
 protected:
     glm::vec3 m_position;

@@ -1,7 +1,7 @@
 #ifndef TUNKS_RENDERMODEL_HPP
 #define TUNKS_RENDERMODEL_HPP
 
-#include <glm/glm.hpp>
+#include "glm/glm.hpp"
 #include <vector>
 #include "Mesh.hpp"
 
