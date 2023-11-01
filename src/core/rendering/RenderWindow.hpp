@@ -35,7 +35,7 @@ public:
 
     /**
      * debug code for camera movement
-     * /
+     */
     void handleEvent(SDL_Event &event,float delta);
 
     /**
