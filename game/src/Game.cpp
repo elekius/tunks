@@ -8,7 +8,7 @@
 Game::~Game() {
 }
 
-Game::Game() : m_window(std::make_shared<RenderWindow>(800, 600)) {}
+Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {}
 
 void Game::run() {
     init();
@@ -51,8 +51,17 @@ void Game::run() {
             std::cout << "FPS: " << fps << std::endl;
         }
         while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                quit = true;
+            switch (event.type) {
+                case SDL_QUIT:
+                    quit = true;
+                    break;
+                case SDL_WINDOWEVENT:
+                    if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
+                        int newWidth = event.window.data1;
+                        int newHeight = event.window.data2;
+                        m_window->resize(newWidth,newHeight);
+                    }
+                    break;
             }
         }
     }

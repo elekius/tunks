@@ -15,13 +15,14 @@ public:
      * @param width the width for the ratio
      * @param height the height for the ratio
      */
-    Camera(float fov, float width, float height);
+    Camera(float fov, float aspectRatio);
 
 
     /**
      * Updates the view projection each frame
      */
     virtual void update();
+    void resize(int width,int height);
 
     /**
      * Moves the camera with the given distance
@@ -52,6 +53,8 @@ protected:
     glm::mat4 m_projection;
     glm::mat4 m_view;
     glm::mat4 m_viewProj; // cached result of view * projection
+    float m_aspectRatio;
+    float m_fov;
 };
 
 

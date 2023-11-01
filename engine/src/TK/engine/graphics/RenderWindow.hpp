@@ -34,6 +34,8 @@ public:
      */
     void display();
 
+    void resize(int newWidth,int newHeight);
+
 private:
     SDL_Window *m_window;
     SDL_GLContext m_glContext;
@@ -43,7 +45,7 @@ private:
     /**
      * Inits the SDL and OpenGL attributes.
      */
-    void initSDL();
+    void initSDL(int width,int height);
     void initOpenGL();
     void initCamera();
 };

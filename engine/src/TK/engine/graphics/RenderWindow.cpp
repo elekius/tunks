@@ -3,10 +3,11 @@
 #include "engine/utils/Log.hpp"
 
 RenderWindow::RenderWindow(int width, int height) {
-    initSDL();
+    initSDL(width,height);
     initOpenGL();
     initCamera();
-    m_shader = std::make_shared<Shader>("rsc/shaders/basic/basic_shader.vert", "rsc/shaders/basic/basic_shader.frag");
+    m_shader = std::make_shared<Shader>("engine/shaders/basic/basic_shader.vert", "engine/shaders/basic/basic_shader.frag");
+    resize(width,height);
 }
 
 RenderWindow::~RenderWindow() {
@@ -33,8 +34,8 @@ void RenderWindow::display() {
     SDL_GL_SwapWindow(m_window);
 }
 
-void RenderWindow::initSDL() {
-    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL);
+void RenderWindow::initSDL(int width, int height) {
+    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
     if (m_window == nullptr) {
         SDL_Quit();
         TK_LOG_F << "Window creation failed: " << SDL_GetError();
@@ -56,7 +57,13 @@ void RenderWindow::initOpenGL() {
 }
 
 void RenderWindow::initCamera() {
-    m_camera = std::make_shared<Camera>(90.0f, 800, 600);
+    m_camera = std::make_shared<Camera>(90.0f,4/3);
     m_camera->translate(glm::vec3(0.0f, 0.0f, 5.0f));
     m_camera->update();
 }
+
+void RenderWindow::resize(int newWidth, int newHeight) {
+    glViewport(0, 0, newWidth, newHeight);
+    m_camera->resize(newWidth,newHeight);
+}
+
