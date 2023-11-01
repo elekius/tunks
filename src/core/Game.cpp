@@ -2,6 +2,7 @@
 #include <chrono>
 #include "Game.hpp"
 #include "core/utils/Log.hpp"
+#include "core/rendering/Mesh.hpp"
 #include "core/rendering/RenderModel.hpp"
 
 Game::~Game() {
@@ -12,15 +13,9 @@ Game::Game() : m_window(std::make_shared<RenderWindow>(800, 600)) {}
 void Game::run() {
     init();
     RenderModel model;
-    model.createFromFile("rsc/models/test-monkey.tk");
-    model.translate(glm::vec3(-1.0f, -1.0f, 0.0f));
-    RenderModel model2;
-    model2.createFromFile("rsc/models/test-cube.tk");
-    model2.translate(glm::vec3(0.5f, -3.0f, 2.0f));
-    RenderModel model3;
-    model3.createFromFile("rsc/models/enemy-tank.tk");
-    model3.translate(glm::vec3(0.5f, -1.0f, 2.0f));
-    model3.rotate(45,glm::vec3(0,1,0));
+    model.loadFromFile("rsc/models/tree.tk");
+    model.translate(glm::vec3(0.0f, -1.0f, 1.0f));
+
 
     int frameCount = 0;
     double totalTime = 0.0;
@@ -36,10 +31,8 @@ void Game::run() {
         prevTime = currentTime;
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+        //model.rotate(0.2f * deltaTime, glm::vec3(0, 1, 0));
         m_window->draw(model);
-        m_window->draw(model2);
-        m_window->draw(model3);
         m_window->display();
 
         frameCount++;
@@ -57,7 +50,9 @@ void Game::run() {
             if (event.type == SDL_QUIT) {
                 quit = true;
             }
+            m_window->handleEvent(event,deltaTime);
         }
+        m_window->handleEvent(event,deltaTime);
     }
 }
 

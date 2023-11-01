@@ -114,4 +114,22 @@ void Shader::setUniformMatrix4fv(const std::string &name, const glm::mat4 &value
     }
 }
 
+void Shader::setUniformVec3(const std::string &name, const glm::vec3 &value) {
+    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
+    if (location != -1) {
+        glUniform3fv(location, 1,&value.x);
+    } else {
+        TK_LOG_W << "Uniform not found: " << name;
+    }
+}
+
+void Shader::setUniformFloat(const std::string &name, const float &value) {
+    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
+    if (location != -1) {
+        glUniform1f(location, value);
+    } else {
+        TK_LOG_W << "Uniform not found: " << name;
+    }
+}
+
 

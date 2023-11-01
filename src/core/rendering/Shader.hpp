@@ -35,12 +35,9 @@ public:
      */
     [[nodiscard]] GLuint getShaderId() const;
 
-    /**
-     * Sets a matrix4 uniform for the shader
-     * @param name the name of the uniform
-     * @param value the value for the uniform
-     */
     void setUniformMatrix4fv(const std::string &name, const glm::mat4 &value);
+    void setUniformVec3(const std::string &name, const glm::vec3 &value);
+    void setUniformFloat(const std::string &name, const float &value);
 
 
 private:

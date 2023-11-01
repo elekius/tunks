@@ -1,4 +1,5 @@
 
+#include <iostream>
 #include "VertexBuffer.hpp"
 #include "Vertex.hpp"
 
@@ -33,7 +34,6 @@ VertexBuffer::~VertexBuffer() {
 }
 
 void VertexBuffer::bind() const {
-
     glBindVertexArray(m_vaoId);
 }
 

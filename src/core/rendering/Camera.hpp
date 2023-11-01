@@ -32,7 +32,7 @@ public:
     /**
      * Updates the view projection each frame
      */
-    void update();
+    virtual void update();
 
     /**
      * Moves the camera with the given distance
@@ -46,7 +46,8 @@ public:
      */
     void rotateY(float degrees);
 
-private:
+protected:
+    glm::vec3 m_position;
     glm::mat4 m_projection;
     glm::mat4 m_view;
     glm::mat4 m_viewProj; // cached result of view * projection

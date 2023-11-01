@@ -1,36 +1,18 @@
 #ifndef TUNKS_RENDERMODEL_HPP
 #define TUNKS_RENDERMODEL_HPP
 
-
-#include <string>
+#include <glm/glm.hpp>
 #include <vector>
-#include <GL/glew.h>
-#include <memory>
-#include "Vertex.hpp"
-#include "VertexBuffer.hpp"
-#include "glm/glm.hpp"
+#include "Mesh.hpp"
 
 /**
- * A small wrapper for a 3d model. The model can be created with a tk file. The tk files needs to be converted with the TunksObjConverter
+ *
  * @author ChikyuKido
  */
 class RenderModel {
 public:
-    /**
-     * Creates a new RenderModel
-     */
     RenderModel();
-    /**
-     * Loads the model from a .tk file and create the associated buffers.
-     * @param path
-     */
-    void createFromFile(const std::string &path);
-
-    /**
-     * Binds the VertexBuffer and then draw the vertices with a indexBuffer. Also unbinds the buffer afterwards
-     */
-    void draw();
-
+    void loadFromFile(const std::string& path);
     /**
      * Moves the model with the given value
      * @param move the vec3 to move
@@ -44,15 +26,17 @@ public:
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    void draw(const std::shared_ptr<Shader>& shader);
+
     /**
      * Gets the model matrix.
      * @return the matrix of the model
      */
     [[nodiscard]] const glm::mat4 &getMatrix() const;
-
 private:
     glm::mat4 m_matrix;
-    std::unique_ptr<VertexBuffer> m_vertexBuffer;
+    std::vector<std::shared_ptr<Mesh>> m_meshes;
+    void createMesh(std::ifstream &inputStream);
 };
 
 

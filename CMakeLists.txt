@@ -12,8 +12,8 @@ set(SOURCE_FILES
         src/Defines.hpp
         src/main.cpp
         src/core/utils/Log.hpp
-        src/core/rendering/RenderModel.cpp
-        src/core/rendering/RenderModel.hpp
+        src/core/rendering/Mesh.cpp
+        src/core/rendering/Mesh.hpp
         src/core/rendering/Vertex.hpp
         src/core/Game.cpp
         src/core/Game.hpp
@@ -25,6 +25,9 @@ set(SOURCE_FILES
         src/core/rendering/Camera.hpp
         src/core/rendering/RenderWindow.cpp
         src/core/rendering/RenderWindow.hpp
+        src/core/rendering/RenderModel.cpp
+        src/core/rendering/RenderModel.hpp
+        src/core/rendering/FPSCamera.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc
