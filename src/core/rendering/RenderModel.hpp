@@ -6,12 +6,16 @@
 #include "Mesh.hpp"
 
 /**
- *
+ * The imported rendermodel. It consists of meshes.
  * @author ChikyuKido
  */
 class RenderModel {
 public:
     RenderModel();
+    /**
+     * Creates the meshes for the renderModel. The file should be in the TK file format from the TunksObjConverter
+     * @param path the path to the tk file
+     */
     void loadFromFile(const std::string& path);
     /**
      * Moves the model with the given value
@@ -26,6 +30,10 @@ public:
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    /**
+     * Draws all the meshes
+     * @param shader the basic shader so the meshes can apply their material to the basic shader when drawing
+     */
     void draw(const std::shared_ptr<Shader>& shader);
 
     /**

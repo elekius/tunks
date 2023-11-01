@@ -23,13 +23,13 @@ struct Material {
 };
 
 /**
- * A small wrapper for a 3d model. The model can be created with a tk file. The tk files needs to be converted with the TunksObjConverter
+ * The mesh class for the RenderModel. It containes the material and the vertexBuffer of the mesh.
  * @author ChikyuKido
  */
 class Mesh {
 public:
     /**
-     * Creates a new RenderModel
+     * Creates a new Mesh
      */
     Mesh();
 
@@ -43,6 +43,8 @@ public:
 
     /**
      * Binds the VertexBuffer and then draw the vertices with a indexBuffer. Also unbinds the buffer afterwards
+     * Sets the uniforms for the fragment shader also the material settings
+     * @param shader The basic shader
      */
     void draw(const std::shared_ptr<Shader>& shader);
 

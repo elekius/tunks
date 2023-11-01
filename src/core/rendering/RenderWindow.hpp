@@ -25,7 +25,6 @@ public:
      * @param height the height of the window
      */
     RenderWindow(int width, int height);
-
     virtual ~RenderWindow();
 
     /**
@@ -34,7 +33,9 @@ public:
      */
     void draw(RenderModel &model);
 
-    //debug code for camera movement
+    /**
+     * debug code for camera movement
+     * /
     void handleEvent(SDL_Event &event,float delta);
 
     /**
