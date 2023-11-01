@@ -1,6 +1,7 @@
 #include "RenderWindow.hpp"
-#include "RenderModel.hpp"
+#include "Model.hpp"
 #include "engine/utils/Log.hpp"
+#include "ModelObject.hpp"
 
 RenderWindow::RenderWindow(int width, int height) {
     initSDL(width,height);
@@ -15,18 +16,18 @@ RenderWindow::~RenderWindow() {
     SDL_GL_DeleteContext(m_glContext);
 }
 
-void RenderWindow::draw(RenderModel &model) {
+void RenderWindow::draw(ModelObject &modelObject) {
     m_camera->update();
     m_shader->bind();
-    glm::mat4 modelView = m_camera->getView() * model.getMatrix();
+    glm::mat4 modelView = m_camera->getView() * modelObject.getMatrix();
     glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
 
     // Set vertex shader uniforms
-    m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * model.getMatrix());
+    m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * modelObject.getMatrix());
     m_shader->setUniformMatrix4fv("u_modelView", modelView);
     m_shader->setUniformMatrix4fv("u_invModelView", invModelView);
 
-    model.draw(m_shader);
+    modelObject.draw(m_shader);
     m_shader->unbind();
 }
 
@@ -35,7 +36,7 @@ void RenderWindow::display() {
 }
 
 void RenderWindow::initSDL(int width, int height) {
-    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
     if (m_window == nullptr) {
         SDL_Quit();
         TK_LOG_F << "Window creation failed: " << SDL_GetError();
@@ -54,16 +55,17 @@ void RenderWindow::initOpenGL() {
         TK_LOG_F << "OpenGL 2.1 not supported ";
     }
     TK_LOG << "Running with OpenGL version: " << glGetString(GL_VERSION);
+    glEnable(GL_DEPTH_TEST);
+    SDL_GL_SetSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {
-    m_camera = std::make_shared<Camera>(90.0f,4/3);
+    m_camera = std::make_shared<Camera>(90.0f,16/9);
     m_camera->translate(glm::vec3(0.0f, 0.0f, 5.0f));
     m_camera->update();
 }
 
 void RenderWindow::resize(int newWidth, int newHeight) {
     glViewport(0, 0, newWidth, newHeight);
-    m_camera->resize(newWidth,newHeight);
 }
 

@@ -5,11 +5,12 @@
 #include <SDL2/SDL.h>
 #include <memory>
 #include "Camera.hpp"
-#include "RenderModel.hpp"
+#include "Model.hpp"
 #include "Shader.hpp"
+#include "ModelObject.hpp"
 
 /**
- * The wrapper class for the SDL window. It contains the camera and is responsible for rendering RenderModels.
+ * The wrapper class for the SDL window and the opengl initialization. It contains the camera and is responsible for rendering RenderModels.
  * It also manages the basic shader.
  * @see RenderModel.hpp
  * @author ChikyuKido
@@ -27,7 +28,7 @@ public:
      * Draws a model with the basic shader.
      * @param model The model to draw
      */
-    void draw(RenderModel &model);
+    void draw(ModelObject &modelObject);
 
     /**
      * Waits for the current frame to finish. Uses SDL_GL_SwapWindow.
@@ -42,9 +43,6 @@ private:
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
 
-    /**
-     * Inits the SDL and OpenGL attributes.
-     */
     void initSDL(int width,int height);
     void initOpenGL();
     void initCamera();

@@ -1,5 +1,5 @@
-#ifndef TUNKS_RENDERMODEL_HPP
-#define TUNKS_RENDERMODEL_HPP
+#ifndef TUNKS_MODEL_HPP
+#define TUNKS_MODEL_HPP
 
 #include "glm/glm.hpp"
 #include <vector>
@@ -9,9 +9,9 @@
  * The imported rendermodel. It consists of meshes.
  * @author ChikyuKido
  */
-class RenderModel {
+class Model {
 public:
-    RenderModel();
+    Model();
     /**
      * Creates the meshes for the renderModel. The file should be in the TK file format from the TunksObjConverter
      * @param path the path to the tk file
@@ -41,11 +41,13 @@ public:
      * @return the matrix of the model
      */
     [[nodiscard]] const glm::mat4 &getMatrix() const;
+
+    void setMatrix(const glm::mat4 &matrix);
+
 private:
     glm::mat4 m_matrix;
     std::vector<std::shared_ptr<Mesh>> m_meshes;
     void createMesh(std::ifstream &inputStream);
 };
-
 
 #endif

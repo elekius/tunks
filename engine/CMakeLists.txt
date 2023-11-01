@@ -26,9 +26,10 @@ set(SOURCE_FILES
         src/TK/engine/graphics/Camera.hpp
         src/TK/engine/graphics/RenderWindow.cpp
         src/TK/engine/graphics/RenderWindow.hpp
-        src/TK/engine/graphics/RenderModel.cpp
-        src/TK/engine/graphics/RenderModel.hpp
-        src/TK/engine/graphics/FPSCamera.hpp
+        src/TK/engine/graphics/Model.cpp
+        src/TK/engine/graphics/Model.hpp
+        src/TK/engine/graphics/ModelObject.cpp
+        src/TK/engine/graphics/ModelObject.hpp
 )
 set(LIBRARY_FILES
         ${CMAKE_SOURCE_DIR}/libs/easyloggingpp/easylogging++.cc

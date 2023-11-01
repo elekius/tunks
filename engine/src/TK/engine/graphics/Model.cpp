@@ -1,10 +1,10 @@
 #include "glm/gtc/matrix_transform.hpp"
-#include "RenderModel.hpp"
+#include "Model.hpp"
 #include "engine/utils/Log.hpp"
 
-RenderModel::RenderModel() : m_matrix(1.0f) {}
+Model::Model() : m_matrix(1.0f) {}
 
-void RenderModel::loadFromFile(const std::string &path) {
+void Model::loadFromFile(const std::string &path) {
     TK_LOG << "Try loading model file: " << path;
     std::ifstream input = std::ifstream(path, std::ios::in | std::ios::binary);
     if (!input.is_open()) {
@@ -22,7 +22,7 @@ void RenderModel::loadFromFile(const std::string &path) {
     TK_LOG << "Successfully created the model";
 }
 
-void RenderModel::createMesh(std::ifstream &inputStream) {
+void Model::createMesh(std::ifstream &inputStream) {
     std::shared_ptr<VertexBuffer> vertexBuffer;
     std::shared_ptr<Material> material = std::make_shared<Material>();
 
@@ -60,21 +60,25 @@ void RenderModel::createMesh(std::ifstream &inputStream) {
 }
 
 
-void RenderModel::translate(glm::vec3 move) {
+void Model::translate(glm::vec3 move) {
     m_matrix = glm::translate(m_matrix, move);
 }
 
-void RenderModel::rotate(float degrees, glm::vec3 axis) {
+void Model::rotate(float degrees, glm::vec3 axis) {
     m_matrix = glm::rotate(m_matrix, degrees, axis);
 }
 
-void RenderModel::draw(const std::shared_ptr<Shader>& shader) {
+void Model::draw(const std::shared_ptr<Shader>& shader) {
     for (auto &mesh: m_meshes) {
         mesh->draw(shader);
     }
 }
 
-const glm::mat4 &RenderModel::getMatrix() const {
+const glm::mat4 &Model::getMatrix() const {
     return m_matrix;
+}
+
+void Model::setMatrix(const glm::mat4 &matrix) {
+    m_matrix = matrix;
 }
 

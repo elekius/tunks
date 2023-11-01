@@ -12,12 +12,13 @@ Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {}
 
 void Game::run() {
     init();
-    RenderModel model;
-    model.loadFromFile("rsc/models/tree.tk");
-    model.translate(glm::vec3(0.0f, -1.0f, 1.0f));
-    RenderModel model2;
-    model2.loadFromFile("rsc/models/enemy-tank.tk");
-    model2.translate(glm::vec3(0.0f, -2.0f, 1.0f));
+    std::vector<ModelObject> models;
+    Model model;
+    model.loadFromFile("rsc/models/enemy-tank.tk");
+    for (int i = -10; i < 10; ++i) {
+        models.emplace_back(&model);
+        models[models.size()-1].translate(glm::vec3(i,-1.0f,-10.0f));
+    }
 
 
     int frameCount = 0;
@@ -34,9 +35,10 @@ void Game::run() {
         prevTime = currentTime;
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        //model.rotate(0.2f * deltaTime, glm::vec3(0, 1, 0));
-        m_window->draw(model);
-        m_window->draw(model2);
+        for (auto &model: models) {
+            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+            m_window->draw(model);
+        }
         m_window->display();
 
         frameCount++;
