@@ -5,7 +5,7 @@
 #include <iostream>
 #include "VertexBuffer.hpp"
 #include "Vertex.hpp"
-VertexBuffer::VertexBuffer(void *data, uint32 numVertices, std::vector<uint32> indices) {
+VertexBuffer::VertexBuffer(std::vector<Vertex> vertices, std::vector<uint32> indices) {
     //create vao
     glGenVertexArrays(1,&m_vaoId);
     glBindVertexArray(m_vaoId);
@@ -13,7 +13,7 @@ VertexBuffer::VertexBuffer(void *data, uint32 numVertices, std::vector<uint32> i
     //create buffer
     glGenBuffers(1,&m_bufferId);
     glBindBuffer(GL_ARRAY_BUFFER,m_bufferId);
-    glBufferData(GL_ARRAY_BUFFER,numVertices * sizeof(Vertex),data,GL_STATIC_DRAW);
+    glBufferData(GL_ARRAY_BUFFER,vertices.size() * sizeof(Vertex),vertices.data(),GL_STATIC_DRAW);
 
     //add vertexBuffer attributes
     glEnableVertexAttribArray(0);

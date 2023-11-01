@@ -9,6 +9,7 @@ find_package(SDL2_ttf REQUIRED)
 find_package(GLEW REQUIRED)
 
 set(SOURCE_FILES
+        src/Defines.hpp
         src/main.cpp
         src/utils/Log.hpp
         src/rendering/RenderModel.cpp
@@ -20,10 +21,14 @@ set(SOURCE_FILES
         src/rendering/VertexBuffer.hpp
         src/rendering/Shader.cpp
         src/rendering/Shader.hpp
+        src/rendering/Camera.cpp
+        src/rendering/Camera.hpp
+        src/rendering/RenderWindow.cpp
+        src/rendering/RenderWindow.hpp
 )
 set(LIBRARY_FILES
        libs/easyloggingpp/easylogging++.cc
-        src/Defines.hpp
+
 )
 
 include_directories(

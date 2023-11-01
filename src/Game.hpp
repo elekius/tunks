@@ -4,6 +4,7 @@
 
 #include <memory>
 #include <SDL2/SDL.h>
+#include "rendering/RenderWindow.hpp"
 
 class Game {
 public:
@@ -12,8 +13,7 @@ public:
     void init();
     virtual ~Game();
 private:
-    SDL_Window* m_window;
-    SDL_GLContext m_glContext;
+    std::shared_ptr<RenderWindow> m_window;
 };
 
 

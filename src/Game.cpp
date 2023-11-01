@@ -1,71 +1,37 @@
-
 #include <GL/glew.h>
 #include <chrono>
 #include "Game.hpp"
 #include "utils/Log.hpp"
 #include "rendering/RenderModel.hpp"
-#include "rendering/Shader.hpp"
 
 Game::~Game() {
-    SDL_GL_DeleteContext(m_glContext);
-    SDL_DestroyWindow(m_window);
-    SDL_Quit();
 }
 
-Game::Game() : m_window(SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 800, 600, SDL_WINDOW_OPENGL)){
-    if (m_window == nullptr) {
-        SDL_Quit();
-        TK_LOG_F <<  "Window creation failed: " << SDL_GetError();
-    }
-
-    m_glContext = SDL_GL_CreateContext(m_window);
-
-    GLenum glewError = glewInit();
-    if (glewError != GLEW_OK) {
-        TK_LOG_F << "GLEW initialization failed: " << glewGetErrorString(glewError);
-    }
-    if (!GLEW_VERSION_2_1) {
-        TK_LOG_F << "OpenGL 2.1 not supported ";
-    }
-    TK_LOG << "Running with OpenGL version: " << glGetString(GL_VERSION);
-}
+Game::Game() : m_window(std::make_shared<RenderWindow>(800,600)){}
 
 void Game::run() {
     init();
     RenderModel model;
-    model.createFromFile("");
-    Shader shader("rsc/shaders/basic/basic_shader.vert","rsc/shaders/basic/basic_shader.frag");
-    shader.bind();
+    model.createFromFile("rsc/models/test-monkey.tk");
+    model.translate(glm::vec3(0.0f,-1.0f,0.0f));
 
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;
     auto startTime = std::chrono::high_resolution_clock::now();
 
-    int colorUniformLocation = glGetUniformLocation(shader.getShaderId(),"u_color");
-    if(colorUniformLocation == -1) {
-        TK_LOG_E << "Unfiform location not found";
-    }else {
-        glUniform4f(colorUniformLocation,1.0f,0.0f,1.0f,1.0f);
-    }
-
     bool quit = false;
     SDL_Event event;
     while (!quit) {
-        while (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                quit = true;
-            }
-        }
         static auto prevTime = std::chrono::high_resolution_clock::now();
         auto currentTime = std::chrono::high_resolution_clock::now();
-        double deltaTime = std::chrono::duration<double>(currentTime - prevTime).count();
+        float deltaTime = std::chrono::duration<float>(currentTime - prevTime).count();
         prevTime = currentTime;
-
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT);
-        model.draw();
-        SDL_GL_SwapWindow(m_window);
+        model.rotate(1.0f*deltaTime, glm::vec3(0, 1, 0));
+        m_window->draw(model);
+        m_window->display();
 
         frameCount++;
         auto endTime = std::chrono::high_resolution_clock::now();
@@ -78,6 +44,11 @@ void Game::run() {
             startTime = endTime;
             std::cout << "FPS: " << fps << std::endl;
         }
+        while (SDL_PollEvent(&event)) {
+            if (event.type == SDL_QUIT) {
+                quit = true;
+            }
+        }
     }
 }
 
@@ -86,12 +57,6 @@ void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
     TK_LOG << "[OpenGL] " << message;
 }
 void Game::init() {
-    SDL_GL_SetAttribute(SDL_GL_RED_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE, 8);
-    SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE, 32);
-    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 #ifdef DEBUG
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS,SDL_GL_CONTEXT_DEBUG_FLAG);
 #endif

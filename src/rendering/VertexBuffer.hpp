@@ -2,12 +2,13 @@
 #define TUNKS_VERTEXBUFFER_HPP
 
 #include "Defines.hpp"
+#include "Vertex.hpp"
 #include <GL/glew.h>
 #include <vector>
 
 class VertexBuffer {
 public:
-    VertexBuffer(void* data,uint32 numVertices,std::vector<uint32> indices);
+    VertexBuffer(std::vector<Vertex> vertices,std::vector<uint32> indices);
 
     virtual ~VertexBuffer();
 

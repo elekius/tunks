@@ -104,4 +104,13 @@ GLuint Shader::getShaderId() const {
     return m_shaderId;
 }
 
+void Shader::setUniformMatrix4fv(const std::string &name, const glm::mat4 &value) {
+    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
+    if (location != -1) {
+        glUniformMatrix4fv(location,1,GL_FALSE, &value[0][0]);
+    } else {
+        TK_LOG_W << "Uniform not found: " << name;
+    }
+}
+
 
