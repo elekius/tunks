@@ -20,4 +20,6 @@ void Mesh::create(std::shared_ptr<VertexBuffer> vertexBuffer, std::shared_ptr<Ma
 
 Mesh::Mesh() {}
 
-Mesh::~Mesh() {}
+Mesh::~Mesh() {
+
+}

@@ -1,4 +1,5 @@
 #include <glad/glad.h>
+#include <GLFW/glfw3.h>
 #include <chrono>
 #include <iostream>
 #include "Game.hpp"
@@ -8,17 +9,27 @@
 Game::~Game() {
 }
 
-Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {}
+Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {
+    glfwSetWindowUserPointer(m_window->getWindow(), this);
+}
+
+
+void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
+    Game* gameInstance = static_cast<Game*>(glfwGetWindowUserPointer(window));
+    gameInstance->resize(width,height);
+}
 
 void Game::run() {
     init();
+    std::vector<ModelObject> models;
     Model model;
-    model.loadFromFile("rsc/models/test-monkey.tk");
-    ModelObject modelObject(&model);
-    modelObject.translate(glm::vec3(-2,0,0));
-    ModelObject modelObject2(&model);
-    modelObject2.translate(glm::vec3(2,0,0));
-
+    model.loadFromFile("rsc/models/enemy-tank.tk");
+    for (int j = -1; j < 10; ++j) {
+        for (int i = -1; i < 1; ++i) {
+            models.emplace_back(&model);
+            models[models.size() - 1].translate(glm::vec3(i*0.08, j*0.08, -0.0f));
+        }
+    }
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;
@@ -33,10 +44,10 @@ void Game::run() {
 
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        modelObject.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
-        modelObject2.rotate(1.0f * deltaTime, glm::vec3(0, -1, 0));
-        m_window->draw(modelObject);
-        m_window->draw(modelObject2);
+        for (auto &model: models) {
+            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+            m_window->draw(model);
+        }
         m_window->display();
 
         frameCount++;
@@ -51,6 +62,7 @@ void Game::run() {
             std::cout << "FPS: " << fps << std::endl;
         }
 
+        glfwSetFramebufferSizeCallback(m_window->getWindow(), framebuffer_size_callback);
         glfwPollEvents();
         if (glfwWindowShouldClose(m_window->getWindow())) {
             quit = true;
@@ -70,4 +82,8 @@ void Game::init() {
     glEnable(GL_DEBUG_OUTPUT);
     glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
     glDebugMessageCallback(openGLDebugCallback, nullptr);
+}
+
+void Game::resize(int width, int height) {
+    m_window->resize(width,height);
 }

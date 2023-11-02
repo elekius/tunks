@@ -11,6 +11,7 @@
 class Game {
 public:
     Game();
+    void resize(int width, int height);
     /**
      * starts the game
      */

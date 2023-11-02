@@ -18,34 +18,15 @@ public:
      */
     void loadFromFile(const std::string& path);
     /**
-     * Moves the model with the given value
-     * @param move the vec3 to move
-     */
-    void translate(glm::vec3 move);
-
-    /**
-     * Rotates the model in the given degrees in the given axis
-     * @param degrees the degrees to rotate
-     * @param axis the axis in which it should be rotated
-     */
-    void rotate(float degrees, glm::vec3 axis);
-
-    /**
      * Draws all the meshes
      * @param shader the basic shader so the meshes can apply their material to the basic shader when drawing
      */
     void draw(const std::shared_ptr<Shader>& shader);
 
-    /**
-     * Gets the model matrix.
-     * @return the matrix of the model
-     */
-    [[nodiscard]] const glm::mat4 &getMatrix() const;
-
-    void setMatrix(const glm::mat4 &matrix);
 
 private:
     std::vector<std::shared_ptr<Mesh>> m_meshes;
+
     void createMesh(std::ifstream &inputStream);
 };
 
