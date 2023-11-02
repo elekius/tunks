@@ -41,16 +41,16 @@ add_library(TK_Engine
 
 target_include_directories(TK_Engine PUBLIC
         ${SDL2_INCLUDE_DIRS}
-        ${SDL2_IMAGE_INCLUDE_DIRS}
-        ${SDL2_TTF_INCLUDE_DIRS}
+    #    ${SDL2_IMAGE_INCLUDE_DIRS}
+     #   ${SDL2_TTF_INCLUDE_DIRS}
         ${GLEW_INCLUDE_DIRS}
 )
 
 target_link_libraries(TK_Engine PUBLIC
         SDL2::SDL2
         SDL2::SDL2main
-        ${SDL2_IMAGE_LIBRARY}
-        ${SDL2_TTF_LIBRARY}
+   #     ${SDL2_IMAGE_LIBRARY}
+   #     ${SDL2_TTF_LIBRARY}
         ${GLEW_LIBRARIES}
         GL
 )

@@ -7,8 +7,8 @@ option(DIST_RELEASE "Enable distribution release flags" OFF)
 
 
 find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
-find_package(SDL2_ttf REQUIRED)
+#find_package(SDL2_image REQUIRED)
+#find_package(SDL2_ttf REQUIRED)
 find_package(GLEW REQUIRED)
 
 include_directories(

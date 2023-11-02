@@ -5,8 +5,6 @@ ModelObject::ModelObject() : ModelObject(nullptr) {}
 ModelObject::ModelObject(Model *model) : m_model(model),m_matrix(1.0f) {
 
 }
-
-
 void ModelObject::draw(std::shared_ptr<Shader> shader) {
     m_model->draw(shader);
 }

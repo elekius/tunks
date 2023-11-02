@@ -15,11 +15,13 @@ void Game::run() {
     std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/enemy-tank.tk");
-    for (int i = -10; i < 10; ++i) {
-        models.emplace_back(&model);
-        models[models.size()-1].translate(glm::vec3(i,-1.0f,-10.0f));
+    for (int j = -20; j < 20; ++j) {
+        for (int i = -20; i < 20; ++i) {
+            models.emplace_back(&model);
+            models[models.size() - 1].translate(glm::vec3(i*0.3, j*0.3, -10.0f));
+        }
     }
-
+    std::cout << models.size() << std::endl;
 
     int frameCount = 0;
     double totalTime = 0.0;

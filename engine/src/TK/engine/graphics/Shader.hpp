@@ -5,6 +5,8 @@
 #include <GL/glew.h>
 #include "glm/glm.hpp"
 #include <string>
+#include <map>
+#include <unordered_map>
 
 /**
  * A simple Wrapper for a shader program.
@@ -34,7 +36,7 @@ public:
      * @return
      */
     [[nodiscard]] GLuint getShaderId() const;
-
+    GLint getUniformLocation(const std::string &name);
     void setUniformMatrix4fv(const std::string &name, const glm::mat4 &value);
     void setUniformVec3(const std::string &name, const glm::vec3 &value);
     void setUniformFloat(const std::string &name, const float &value);
@@ -42,6 +44,7 @@ public:
 
 private:
     GLuint m_shaderId;
+    std::unordered_map<std::string,GLint> m_cachedUniforms;
 
     /**
      * Compiles the two shaders and create a single shader program.

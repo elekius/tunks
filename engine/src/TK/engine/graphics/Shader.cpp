@@ -106,29 +106,33 @@ GLuint Shader::getShaderId() const {
 }
 
 void Shader::setUniformMatrix4fv(const std::string &name, const glm::mat4 &value) {
-    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
-    if (location != -1) {
-        glUniformMatrix4fv(location, 1, GL_FALSE, &value[0][0]);
-    } else {
-        TK_LOG_W << "Uniform not found: " << name;
-    }
+    GLint loc = getUniformLocation(name);
+    if(loc != 1)  glUniformMatrix4fv(loc, 1, GL_FALSE, &value[0][0]);
+
 }
 
 void Shader::setUniformVec3(const std::string &name, const glm::vec3 &value) {
-    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
-    if (location != -1) {
-        glUniform3fv(location, 1,&value.x);
-    } else {
-        TK_LOG_W << "Uniform not found: " << name;
-    }
+    GLint loc = getUniformLocation(name);
+    if(loc != 1) glUniform3fv(loc, 1,&value.x);
 }
 
 void Shader::setUniformFloat(const std::string &name, const float &value) {
-    GLint location = glGetUniformLocation(m_shaderId, name.c_str());
-    if (location != -1) {
-        glUniform1f(location, value);
+    GLint loc = getUniformLocation(name);
+    if(loc != 1) glUniform1f(loc, value);
+}
+
+GLint Shader::getUniformLocation(const std::string &name) {
+    auto it = m_cachedUniforms.find(name);
+    if (it != m_cachedUniforms.end()) {
+        return it->second;
     } else {
-        TK_LOG_W << "Uniform not found: " << name;
+        GLint location = glGetUniformLocation(m_shaderId, name.c_str());
+        if (location != -1) {
+            m_cachedUniforms[name] = location;
+        } else {
+            TK_LOG_W << "Uniform not found: " << name;
+        }
+        return location;
     }
 }
 
