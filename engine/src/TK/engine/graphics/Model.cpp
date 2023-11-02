@@ -2,7 +2,7 @@
 #include "Model.hpp"
 #include "engine/utils/Log.hpp"
 
-Model::Model() : m_matrix(1.0f) {}
+Model::Model() = default;
 
 void Model::loadFromFile(const std::string &path) {
     TK_LOG << "Try loading model file: " << path;
@@ -60,25 +60,9 @@ void Model::createMesh(std::ifstream &inputStream) {
 }
 
 
-void Model::translate(glm::vec3 move) {
-    m_matrix = glm::translate(m_matrix, move);
-}
-
-void Model::rotate(float degrees, glm::vec3 axis) {
-    m_matrix = glm::rotate(m_matrix, degrees, axis);
-}
-
 void Model::draw(const std::shared_ptr<Shader>& shader) {
     for (auto &mesh: m_meshes) {
         mesh->draw(shader);
     }
-}
-
-const glm::mat4 &Model::getMatrix() const {
-    return m_matrix;
-}
-
-void Model::setMatrix(const glm::mat4 &matrix) {
-    m_matrix = matrix;
 }
 

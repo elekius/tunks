@@ -12,16 +12,12 @@ Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {}
 
 void Game::run() {
     init();
-    std::vector<ModelObject> models;
     Model model;
-    model.loadFromFile("rsc/models/enemy-tank.tk");
-    for (int j = -20; j < 20; ++j) {
-        for (int i = -20; i < 20; ++i) {
-            models.emplace_back(&model);
-            models[models.size() - 1].translate(glm::vec3(i*0.3, j*0.3, -10.0f));
-        }
-    }
-    std::cout << models.size() << std::endl;
+    model.loadFromFile("rsc/models/test-monkey.tk");
+    ModelObject modelObject(&model);
+    modelObject.translate(glm::vec3(-2,0,0));
+    ModelObject modelObject2(&model);
+    modelObject2.translate(glm::vec3(2,0,0));
 
     int frameCount = 0;
     double totalTime = 0.0;
@@ -37,10 +33,10 @@ void Game::run() {
         prevTime = currentTime;
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        for (auto &model: models) {
-            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
-            m_window->draw(model);
-        }
+        modelObject.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+        modelObject2.rotate(1.0f * deltaTime, glm::vec3(0, -1, 0));
+        m_window->draw(modelObject);
+        m_window->draw(modelObject2);
         m_window->display();
 
         frameCount++;

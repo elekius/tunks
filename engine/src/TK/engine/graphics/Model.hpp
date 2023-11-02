@@ -45,7 +45,6 @@ public:
     void setMatrix(const glm::mat4 &matrix);
 
 private:
-    glm::mat4 m_matrix;
     std::vector<std::shared_ptr<Mesh>> m_meshes;
     void createMesh(std::ifstream &inputStream);
 };

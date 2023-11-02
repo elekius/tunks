@@ -10,7 +10,6 @@ void Mesh::draw(const std::shared_ptr<Shader>& shader) {
     shader->setUniformVec3("u_emissive",m_material->emissive);
     shader->setUniformFloat("u_shininess",m_material->shininess);
     glDrawElements(GL_TRIANGLES, m_vertexBuffer->getNumIndices(), GL_UNSIGNED_INT, nullptr);
-    m_vertexBuffer->unbind();
 }
 
 

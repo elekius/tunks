@@ -8,6 +8,9 @@ RenderWindow::RenderWindow(int width, int height) {
     initOpenGL();
     initCamera();
     m_shader = std::make_shared<Shader>("engine/shaders/basic/basic_shader.vert", "engine/shaders/basic/basic_shader.frag");
+    m_shader->bind();
+    m_shader->setUniformVec3("u_lightColor",glm::vec3(1.0f,1.f,1.0f));
+    m_shader->unbind();
     resize(width,height);
     m_renderQueue.reserve(1000);
 }
@@ -20,9 +23,11 @@ void RenderWindow::draw(ModelObject &modelObject) {
     m_camera->update();
     m_renderQueue.push_back(&modelObject);
 }
-
+glm::vec3 sunDirection = glm::vec3(1.0f);
 void RenderWindow::display() {
+    glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(sunDirection,1.0f);
     m_shader->bind();
+    m_shader->setUniformVec3("u_lightDirection",lightDirection);
     for (const auto &model : m_renderQueue) {
         glm::mat4 modelView = m_camera->getView() * model->getMatrix();
         glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
@@ -41,7 +46,7 @@ void RenderWindow::display() {
 
 
 void RenderWindow::initSDL(int width, int height) {
-    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);
+    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
     if (m_window == nullptr) {
         SDL_Quit();
         TK_LOG_F << "Window creation failed: " << SDL_GetError();
@@ -66,7 +71,7 @@ void RenderWindow::initOpenGL() {
 
 void RenderWindow::initCamera() {
     m_camera = std::make_shared<Camera>(90.0f,16/9);
-    m_camera->translate(glm::vec3(0.0f, 0.0f, 5.0f));
+    m_camera->translate(glm::vec3(0.0f, 0.0f, 10.0f));
     m_camera->update();
 }
 
