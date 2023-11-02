@@ -13,7 +13,4 @@ add_executable(TK_Game
     src/Game.hpp
 )
 
-target_include_directories(TK_Game PRIVATE
-        ${CMAKE_SOURCE_DIR}/engine/src
-)
 target_link_libraries(TK_Game PRIVATE TK_Engine)

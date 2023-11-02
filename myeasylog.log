@@ -1,0 +1,7 @@
+2023-11-02 02:08:11,407 FATAL [default] GLEW initialization failed: Missing GL version
+2023-11-02 02:08:11,407 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/game/src/main.cpp:21]
+2023-11-02 02:08:55,903 FATAL [default] GLEW initialization failed: Missing GL version
+2023-11-02 02:08:55,903 WARNING [default] Aborting application. Reason: Fatal log at [/media/Data/Workspaces/Clion/Tunks/game/src/main.cpp:21]
+2023-11-02 02:10:05,499 INFO [default] Running with OpenGL version: 3.3.0 NVIDIA 535.113.01
+2023-11-02 02:10:25,653 INFO [default] Running with OpenGL version: 3.3.0 NVIDIA 535.113.01
+2023-11-02 02:10:48,257 INFO [default] Running with OpenGL version: 3.3.0 NVIDIA 535.113.01

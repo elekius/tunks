@@ -5,17 +5,18 @@ set(CMAKE_CXX_STANDARD 17)
 
 option(DIST_RELEASE "Enable distribution release flags" OFF)
 
-
 include_directories(
-        libs/nlohmannjson
-        libs/easyloggingpp
-        libs/glm
+        engine/src
+        libs/nlohmannjson/include
+        libs/easyloggingpp/include
+        libs/glm/include
         libs/glad/include
 )
 
+add_subdirectory(libs/glad)
+add_subdirectory(libs/easyloggingpp)
 add_subdirectory(engine)
 add_subdirectory(game)
-add_subdirectory(libs/glad)
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")

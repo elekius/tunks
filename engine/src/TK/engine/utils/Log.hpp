@@ -1,7 +1,7 @@
 #ifndef TUNKS_LOG_HPP
 #define TUNKS_LOG_HPP
 
-#include <easylogging++.h>
+#include "easylogging++.h"
 #include <filesystem>
 
 #define TK_INIT_LOG \
