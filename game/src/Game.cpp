@@ -25,12 +25,12 @@ void Game::run() {
     auto startTime = std::chrono::high_resolution_clock::now();
 
     bool quit = false;
-    SDL_Event event;
     while (!quit) {
         static auto prevTime = std::chrono::high_resolution_clock::now();
         auto currentTime = std::chrono::high_resolution_clock::now();
         float deltaTime = std::chrono::duration<float>(currentTime - prevTime).count();
         prevTime = currentTime;
+
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         modelObject.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
@@ -50,19 +50,10 @@ void Game::run() {
             startTime = endTime;
             std::cout << "FPS: " << fps << std::endl;
         }
-        while (SDL_PollEvent(&event)) {
-            switch (event.type) {
-                case SDL_QUIT:
-                    quit = true;
-                    break;
-                case SDL_WINDOWEVENT:
-                    if (event.window.event == SDL_WINDOWEVENT_RESIZED) {
-                        int newWidth = event.window.data1;
-                        int newHeight = event.window.data2;
-                        m_window->resize(newWidth,newHeight);
-                    }
-                    break;
-            }
+
+        glfwPollEvents();
+        if (glfwWindowShouldClose(m_window->getWindow())) {
+            quit = true;
         }
     }
 }

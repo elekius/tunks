@@ -1,3 +1,4 @@
+#include <GL/glew.h>
 #include "RenderWindow.hpp"
 #include "Model.hpp"
 #include "engine/utils/Log.hpp"
@@ -16,14 +17,14 @@ RenderWindow::RenderWindow(int width, int height) {
 }
 
 RenderWindow::~RenderWindow() {
-    SDL_Quit();
-    SDL_GL_DeleteContext(m_glContext);
+    glfwDestroyWindow(m_window);
+    glfwTerminate();
 }
 void RenderWindow::draw(ModelObject &modelObject) {
     m_camera->update();
     m_renderQueue.push_back(&modelObject);
 }
-glm::vec3 sunDirection = glm::vec3(1.0f);
+glm::vec3 sunDirection = glm::vec3(-1.0f);
 void RenderWindow::display() {
     glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(sunDirection,1.0f);
     m_shader->bind();
@@ -41,32 +42,27 @@ void RenderWindow::display() {
     m_shader->unbind();
     m_renderQueue.clear();
 
-    SDL_GL_SwapWindow(m_window);
+    glfwSwapBuffers(m_window);
 }
 
 
 void RenderWindow::initSDL(int width, int height) {
-    m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL);
+    glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
+    m_window = glfwCreateWindow(width, height, "Tunks", nullptr, nullptr);
     if (m_window == nullptr) {
-        SDL_Quit();
-        TK_LOG_F << "Window creation failed: " << SDL_GetError();
+        TK_LOG_F << "Window creation failed";
     }
 }
 
 void RenderWindow::initOpenGL() {
-    m_glContext = SDL_GL_CreateContext(m_window);
+    glfwMakeContextCurrent(m_window);
     GLenum glewError = glewInit();
     if (glewError != GLEW_OK) {
-        SDL_Quit();
         TK_LOG_F << "GLEW initialization failed: " << glewGetErrorString(glewError);
-    }
-    if (!GLEW_VERSION_2_1) {
-        SDL_Quit();
-        TK_LOG_F << "OpenGL 2.1 not supported ";
     }
     TK_LOG << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-    SDL_GL_SetSwapInterval(0);
+    glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {
@@ -77,5 +73,9 @@ void RenderWindow::initCamera() {
 
 void RenderWindow::resize(int newWidth, int newHeight) {
     glViewport(0, 0, newWidth, newHeight);
+}
+
+GLFWwindow *RenderWindow::getWindow() const {
+    return m_window;
 }
 

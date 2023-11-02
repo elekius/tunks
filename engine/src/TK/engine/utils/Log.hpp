@@ -3,7 +3,6 @@
 
 #include <easylogging++.h>
 #include <filesystem>
-#include <GL/glew.h>
 
 #define TK_INIT_LOG \
      std::string logDirectory = "log"; \

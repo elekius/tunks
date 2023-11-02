@@ -3,9 +3,10 @@ project(TK_Engine)
 
 set(CMAKE_CXX_STANDARD 17)
 
-find_package(SDL2 REQUIRED)
-find_package(SDL2_image REQUIRED)
-find_package(SDL2_ttf REQUIRED)
+#find_package(SDL2 REQUIRED)
+#find_package(SDL2_image REQUIRED)
+#find_package(SDL2_ttf REQUIRED)
+find_package(glfw3 REQUIRED)
 find_package(GLEW REQUIRED)
 
 
@@ -40,17 +41,19 @@ add_library(TK_Engine
 )
 
 target_include_directories(TK_Engine PUBLIC
-        ${SDL2_INCLUDE_DIRS}
+     #   ${SDL2_INCLUDE_DIRS}
     #    ${SDL2_IMAGE_INCLUDE_DIRS}
      #   ${SDL2_TTF_INCLUDE_DIRS}
+        ${GLFW_INCLUDE_NONE}
         ${GLEW_INCLUDE_DIRS}
 )
 
 target_link_libraries(TK_Engine PUBLIC
-        SDL2::SDL2
-        SDL2::SDL2main
+    #    SDL2::SDL2
+    #    SDL2::SDL2main
    #     ${SDL2_IMAGE_LIBRARY}
    #     ${SDL2_TTF_LIBRARY}
         ${GLEW_LIBRARIES}
         GL
+        glfw
 )

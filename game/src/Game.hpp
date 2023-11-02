@@ -1,9 +1,7 @@
 #ifndef TUNKS_GAME_HPP
 #define TUNKS_GAME_HPP
 
-
 #include <memory>
-#include <SDL2/SDL.h>
 #include "TK/engine/graphics/RenderWindow.hpp"
 
 /**

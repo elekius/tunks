@@ -1,6 +1,6 @@
 #ifndef TUNKS_RENDERWINDOW_HPP
 #define TUNKS_RENDERWINDOW_HPP
-
+#include <GLFW/glfw3.h>
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <memory>
@@ -37,9 +37,10 @@ public:
 
     void resize(int newWidth,int newHeight);
 
+    GLFWwindow *getWindow() const;
+
 private:
-    SDL_Window *m_window;
-    SDL_GLContext m_glContext;
+    GLFWwindow *m_window;
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
     std::vector<ModelObject*> m_renderQueue;
