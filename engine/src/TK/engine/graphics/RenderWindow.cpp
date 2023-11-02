@@ -66,7 +66,7 @@ void RenderWindow::initOpenGL() {
 
 void RenderWindow::initCamera() {
     m_camera = std::make_shared<Camera>(90.0f,16/9);
-    m_camera->translate(glm::vec3(0.0f, 0.0f, 10.0f));
+    m_camera->translate(glm::vec3(0.0f, 0.0f, 250.0f));
     m_camera->update();
 }
 

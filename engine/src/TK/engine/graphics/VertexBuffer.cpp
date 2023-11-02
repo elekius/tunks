@@ -17,6 +17,8 @@ VertexBuffer::VertexBuffer(std::vector<Vertex> vertices, std::vector<uint32> ind
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *) offsetof(Vertex, position));
     glEnableVertexAttribArray(1);
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *) offsetof(Vertex, normal));
+    glEnableVertexAttribArray(2);
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void *) offsetof(Vertex, textureCoord));
     //create the index buffer
     m_numIndices = indices.size();
     glGenBuffers(1, &m_indexBufferId);

@@ -23,7 +23,7 @@ void Game::run() {
     init();
     std::vector<ModelObject> models;
     Model model;
-    model.loadFromFile("rsc/models/enemy-tank.tk");
+    model.loadFromFile("rsc/models/fern.tk");
     for (int j = -1; j < 10; ++j) {
         for (int i = -1; i < 1; ++i) {
             models.emplace_back(&model);

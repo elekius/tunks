@@ -121,6 +121,12 @@ void Shader::setUniformFloat(const std::string &name, const float &value) {
     if(loc != 1) glUniform1f(loc, value);
 }
 
+
+void Shader::setUniformInt(const std::string &name, const int &value) {
+    GLint loc = getUniformLocation(name);
+    if(loc != 1) glUniform1i(loc, value);
+}
+
 GLint Shader::getUniformLocation(const std::string &name) {
     auto it = m_cachedUniforms.find(name);
     if (it != m_cachedUniforms.end()) {
@@ -135,5 +141,6 @@ GLint Shader::getUniformLocation(const std::string &name) {
         return location;
     }
 }
+
 
 

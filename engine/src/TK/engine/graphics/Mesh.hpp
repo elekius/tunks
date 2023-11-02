@@ -10,16 +10,23 @@
 #include "glm/glm.hpp"
 #include "Shader.hpp"
 
-/**
- * A simple material struct
- * @author ChikyuKido
- */
-struct Material {
+struct TKMaterial {
     glm::vec3 diffuse;
     glm::vec3 specular;
     glm::vec3 emissive;
     float shininess;
 };
+
+/**
+ * A simple material struct
+ * @author ChikyuKido
+ */
+struct Material {
+    TKMaterial material;
+    GLuint diffuseMap;
+    GLuint normalMap;
+};
+
 
 /**
  * The mesh class for the RenderModel. It containes the material and the vertexBuffer of the mesh.

@@ -11,6 +11,7 @@ include_directories(
         libs/easyloggingpp/include
         libs/glm/include
         libs/glad/include
+        libs/stbimage/include
 )
 
 add_subdirectory(libs/glad)

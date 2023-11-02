@@ -38,6 +38,7 @@ target_include_directories(TK_Engine PUBLIC
 )
 
 target_link_libraries(TK_Engine PUBLIC
+
         easylogging
         GLAD
         GL

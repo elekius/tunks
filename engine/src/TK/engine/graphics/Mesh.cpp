@@ -5,10 +5,12 @@
 void Mesh::draw(const std::shared_ptr<Shader>& shader) {
     m_vertexBuffer->bind();
     //fragment shader uniforms
-    shader->setUniformVec3("u_diffuse",m_material->diffuse);
-    shader->setUniformVec3("u_specular",m_material->specular);
-    shader->setUniformVec3("u_emissive",m_material->emissive);
-    shader->setUniformFloat("u_shininess",m_material->shininess);
+   // shader->setUniformVec3("u_diffuse",m_material->material.diffuse);
+    shader->setUniformVec3("u_specular",m_material->material.specular);
+    shader->setUniformVec3("u_emissive",m_material->material.emissive);
+    shader->setUniformFloat("u_shininess",m_material->material.shininess);
+    glBindTexture(GL_TEXTURE_2D,m_material->diffuseMap);
+    shader->setUniformInt("u_diffuse_map",0);
     glDrawElements(GL_TRIANGLES, m_vertexBuffer->getNumIndices(), GL_UNSIGNED_INT, nullptr);
 }
 

@@ -4,6 +4,7 @@
 #include "TK/engine/utils/Log.hpp"
 #include "Game.hpp"
 
+
 INITIALIZE_EASYLOGGINGPP
 
 int main(int argc, char *argv[]) {
