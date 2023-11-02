@@ -9,31 +9,36 @@ RenderWindow::RenderWindow(int width, int height) {
     initCamera();
     m_shader = std::make_shared<Shader>("engine/shaders/basic/basic_shader.vert", "engine/shaders/basic/basic_shader.frag");
     resize(width,height);
+    m_renderQueue.reserve(1000);
 }
 
 RenderWindow::~RenderWindow() {
     SDL_Quit();
     SDL_GL_DeleteContext(m_glContext);
 }
-
 void RenderWindow::draw(ModelObject &modelObject) {
     m_camera->update();
-    m_shader->bind();
-    glm::mat4 modelView = m_camera->getView() * modelObject.getMatrix();
-    glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
-
-    // Set vertex shader uniforms
-    m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * modelObject.getMatrix());
-    m_shader->setUniformMatrix4fv("u_modelView", modelView);
-    m_shader->setUniformMatrix4fv("u_invModelView", invModelView);
-
-    modelObject.draw(m_shader);
-    m_shader->unbind();
+    m_renderQueue.push_back(&modelObject);
 }
 
 void RenderWindow::display() {
+    m_shader->bind();
+    for (const auto &model : m_renderQueue) {
+        glm::mat4 modelView = m_camera->getView() * model->getMatrix();
+        glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
+
+        // Set vertex shader uniforms
+        m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * model->getMatrix());
+        m_shader->setUniformMatrix4fv("u_modelView", modelView);
+        m_shader->setUniformMatrix4fv("u_invModelView", invModelView);
+        model->draw(m_shader);
+    }
+    m_shader->unbind();
+    m_renderQueue.clear();
+
     SDL_GL_SwapWindow(m_window);
 }
+
 
 void RenderWindow::initSDL(int width, int height) {
     m_window = SDL_CreateWindow("Tunks", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_OPENGL | SDL_WINDOW_RESIZABLE);

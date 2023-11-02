@@ -42,6 +42,7 @@ private:
     SDL_GLContext m_glContext;
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
+    std::vector<ModelObject*> m_renderQueue;
 
     void initSDL(int width,int height);
     void initOpenGL();
