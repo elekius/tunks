@@ -1,6 +1,6 @@
+
 #include "Mesh.hpp"
 #include "Shader.hpp"
-#include <GL/glew.h>
 
 void Mesh::draw(const std::shared_ptr<Shader>& shader) {
     m_vertexBuffer->bind();

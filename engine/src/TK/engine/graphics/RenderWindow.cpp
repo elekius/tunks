@@ -1,4 +1,4 @@
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include "RenderWindow.hpp"
 #include "Model.hpp"
 #include "engine/utils/Log.hpp"
@@ -56,9 +56,8 @@ void RenderWindow::initSDL(int width, int height) {
 
 void RenderWindow::initOpenGL() {
     glfwMakeContextCurrent(m_window);
-    GLenum glewError = glewInit();
-    if (glewError != GLEW_OK) {
-        TK_LOG_F << "GLEW initialization failed: " << glewGetErrorString(glewError);
+    if (!gladLoadGL()) {
+        TK_LOG_F << "GLAD initialization failed";
     }
     TK_LOG << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);

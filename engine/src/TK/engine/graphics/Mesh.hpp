@@ -4,7 +4,6 @@
 
 #include <string>
 #include <vector>
-#include <GL/glew.h>
 #include <memory>
 #include "Vertex.hpp"
 #include "VertexBuffer.hpp"

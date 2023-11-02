@@ -1,9 +1,9 @@
 #ifndef TUNKS_VERTEXBUFFER_HPP
 #define TUNKS_VERTEXBUFFER_HPP
 
+#include <glad/glad.h>
 #include "../Defines.hpp"
 #include "Vertex.hpp"
-#include <GL/glew.h>
 #include <vector>
 
 /**

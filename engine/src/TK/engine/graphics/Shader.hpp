@@ -1,8 +1,7 @@
 #ifndef TUNKS_SHADER_HPP
 #define TUNKS_SHADER_HPP
-
+#include <glad/glad.h>
 #include "../Defines.hpp"
-#include <GL/glew.h>
 #include "glm/glm.hpp"
 #include <string>
 #include <map>

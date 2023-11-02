@@ -1,4 +1,4 @@
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <chrono>
 #include <iostream>
 #include "Game.hpp"

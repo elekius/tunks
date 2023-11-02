@@ -1,8 +1,7 @@
 #ifndef TUNKS_RENDERWINDOW_HPP
 #define TUNKS_RENDERWINDOW_HPP
+
 #include <GLFW/glfw3.h>
-#include <GL/glew.h>
-#include <SDL2/SDL.h>
 #include <memory>
 #include "Camera.hpp"
 #include "Model.hpp"

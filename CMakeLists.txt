@@ -6,19 +6,16 @@ set(CMAKE_CXX_STANDARD 17)
 option(DIST_RELEASE "Enable distribution release flags" OFF)
 
 
-find_package(SDL2 REQUIRED)
-#find_package(SDL2_image REQUIRED)
-#find_package(SDL2_ttf REQUIRED)
-find_package(GLEW REQUIRED)
-
 include_directories(
         libs/nlohmannjson
         libs/easyloggingpp
         libs/glm
+        libs/glad/include
 )
 
 add_subdirectory(engine)
 add_subdirectory(game)
+add_subdirectory(libs/glad)
 
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
