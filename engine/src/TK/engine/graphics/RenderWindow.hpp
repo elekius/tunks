@@ -44,7 +44,8 @@ private:
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
     std::vector<ModelObject*> m_renderQueue;
-    std::map<Mesh*,UniformBuffer> m_uniformBuffers;
+    std::map<Mesh*,std::vector<glm::mat4>> m_matrices;
+    UniformBuffer m_uniformBuffer;
     glm::vec3 m_lightPos;
 
     void initWindow(int width, int height);

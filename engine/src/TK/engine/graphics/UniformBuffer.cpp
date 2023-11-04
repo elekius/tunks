@@ -20,4 +20,8 @@ void UniformBuffer::updateData(const std::vector<glm::mat4>& matrices) {
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
 }
 
+UniformBuffer::~UniformBuffer() {
+    glDeleteBuffers(1, &m_bufferId);
+}
+
 

@@ -13,6 +13,7 @@ RenderWindow::RenderWindow(int width, int height) {
     m_renderQueue.reserve(1000);
     m_lightPos = glm::vec3(-1);
     setLightColor(glm::vec3(1));
+    m_uniformBuffer.createBuffer();
 }
 RenderWindow::~RenderWindow() {
     glfwDestroyWindow(m_window);
@@ -24,32 +25,27 @@ void RenderWindow::draw(ModelObject &modelObject) {
 }
 void RenderWindow::display() {
     m_shader->bind();
-    std::map<Mesh*,std::vector<glm::mat4>> matrices;
     for (const auto &modelObject : m_renderQueue) {
         const Model* model = modelObject->getModel();
         if(!model) continue;
         for (int i = 0;i<model->getMeshes().size();++i) {
-            if(m_uniformBuffers.find(model->getMeshes()[i].get()) == m_uniformBuffers.end()) {
-                UniformBuffer buffer{};
-                buffer.createBuffer();
-                m_uniformBuffers[model->getMeshes()[i].get()] = buffer;
+            if(m_matrices.find(model->getMeshes()[i].get()) == m_matrices.end()) {
+                m_matrices[model->getMeshes()[i].get()] = std::vector<glm::mat4>();
             }
-            if(matrices.find(model->getMeshes()[i].get()) == matrices.end()) {
-                matrices[model->getMeshes()[i].get()] = std::vector<glm::mat4>();
-            }
-            matrices[model->getMeshes()[i].get()].push_back(modelObject->getMatrices()[i]);
+            m_matrices[model->getMeshes()[i].get()].push_back(modelObject->getMatrices()[i]);
         }
     }
     glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(m_lightPos,1.0f);
     m_shader->setUniformVec3("u_lightDirection",lightDirection);
     m_shader->setUniformMatrix4fv("u_CameraViewProj",m_camera->getViewProj());
-    for (auto &pair: m_uniformBuffers) {
-        pair.second.updateData(matrices[pair.first]);
-        pair.second.bind();
-        pair.first->draw(m_shader,matrices[pair.first].size());
+    for (auto &pair: m_matrices) {
+        m_uniformBuffer.updateData(m_matrices[pair.first]);
+        m_uniformBuffer.bind();
+        pair.first->draw(m_shader,m_matrices[pair.first].size());
     }
     m_shader->unbind();
     m_renderQueue.clear();
+    m_matrices.clear();
     glfwSwapBuffers(m_window);
 }
 

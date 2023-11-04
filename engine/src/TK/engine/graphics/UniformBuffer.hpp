@@ -10,6 +10,8 @@
 
 class UniformBuffer {
 public:
+    virtual ~UniformBuffer();
+
     void createBuffer();
     void bind();
     void unbind();
