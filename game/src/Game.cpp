@@ -25,9 +25,9 @@ void Game::run() {
     Model model;
     model.loadFromFile("rsc/models/test.tk");
     for (int j = -20; j < 20; ++j) {
-        for (int i = -10; i < 10; ++i) {
+        for (int i = -20; i < 20; ++i) {
             models.emplace_back(&model);
-            models[models.size() - 1].translate(glm::vec3(i*0.2, j*0.2, -10.0f));
+            models[models.size() - 1].translate(glm::vec3(i*0.1, j*0.1, -10.0f));
         }
     }
     std::cout << models.size() << std::endl;
@@ -35,7 +35,9 @@ void Game::run() {
     double totalTime = 0.0;
     double fps = 0.0;
     auto startTime = std::chrono::high_resolution_clock::now();
-
+    int value;
+    glGetIntegerv(GL_MAX_UNIFORM_BLOCK_SIZE, &value);
+    std::cout <<  value << std::endl;
     bool quit = false;
     while (!quit) {
         static auto prevTime = std::chrono::high_resolution_clock::now();
@@ -46,7 +48,7 @@ void Game::run() {
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         for (auto &model: models) {
-          //  model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
             m_window->draw(model);
         }
         m_window->display();

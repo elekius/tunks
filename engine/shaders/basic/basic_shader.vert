@@ -3,9 +3,10 @@
 layout(location = 0) in vec3 a_position;
 layout(location = 1) in vec3 a_normal;
 layout(location = 2) in vec2 a_tex_coord;
-layout(std140,binding = 0) uniform MyMatrices {
-    mat4 a_modelMatrices[800];
+layout(std140, binding = 0) buffer MyMatrices {
+    mat4 a_modelMatrices[];
 };
+
 
 out vec3 v_normal;
 out vec3 v_position;

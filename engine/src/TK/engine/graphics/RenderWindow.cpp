@@ -23,21 +23,6 @@ void RenderWindow::draw(ModelObject &modelObject) {
     m_renderQueue.push_back(&modelObject);
 }
 void RenderWindow::display() {
-//    glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(m_lightPos,1.0f);
-//    m_shader->bind();
-//    m_shader->setUniformVec3("u_lightDirection",lightDirection);
-//    for (const auto &model : m_renderQueue) {
-//        glm::mat4 modelView = m_camera->getView() * model->getMatrices()[0];
-//        glm::mat4 invModelView = glm::transpose(glm::inverse(modelView));
-//
-//        // Set vertex shader uniforms
-//        m_shader->setUniformMatrix4fv("u_modelViewProj", m_camera->getViewProj() * model->getMatrices()[0]);
-//        m_shader->setUniformMatrix4fv("u_modelView", modelView);
-//        m_shader->setUniformMatrix4fv("u_invModelView", invModelView);
-//        model->draw(m_shader);
-//    }
-//    m_shader->unbind();
-//    m_renderQueue.clear();
     m_shader->bind();
     std::map<Mesh*,std::vector<glm::mat4>> matrices;
     for (const auto &modelObject : m_renderQueue) {
