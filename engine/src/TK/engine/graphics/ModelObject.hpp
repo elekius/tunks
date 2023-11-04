@@ -27,6 +27,22 @@ public:
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    void scale(glm::vec3 scale);
+
+    /**
+ * Moves the model with the given value
+ * @param move the vec3 to move
+ */
+    void translate(glm::vec3 move,int index);
+
+    /**
+     * Rotates the model in the given degrees in the given axis
+     * @param degrees the degrees to rotate
+     * @param axis the axis in which it should be rotated
+     */
+    void rotate(float degrees, glm::vec3 axis,int index);
+
+    void scale(glm::vec3 scale,int index);
 
     /**
      * Draws the model to the screen.

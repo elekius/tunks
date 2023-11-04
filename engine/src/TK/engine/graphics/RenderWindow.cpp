@@ -11,7 +11,7 @@ RenderWindow::RenderWindow(int width, int height) {
     m_shader = std::make_shared<Shader>("engine/shaders/basic/basic_shader.vert", "engine/shaders/basic/basic_shader.frag");
     resize(width,height);
     m_renderQueue.reserve(1000);
-    m_lightPos = glm::vec3(-1);
+    m_lightPos = glm::vec3(0,-1,0);
     setLightColor(glm::vec3(1));
     m_uniformBuffer.createBuffer();
 }
@@ -52,6 +52,7 @@ void RenderWindow::display() {
 
 void RenderWindow::initWindow(int width, int height) {
     glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
+    glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
     m_window = glfwCreateWindow(width, height, "Tunks", nullptr, nullptr);
     if (m_window == nullptr) {
         TK_LOG_F("Engine") << "Window creation failed";
@@ -65,12 +66,13 @@ void RenderWindow::initOpenGL() {
     }
     TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-    glfwSwapInterval(0);
+   // glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {
     m_camera = std::make_shared<Camera>(90.0f,16/9);
-    m_camera->translate(glm::vec3(0.0f, 0.0f, 0.0f));
+    m_camera->translate(glm::vec3(0.0f, 7.0f, 7.0f));
+    m_camera->rotate(45,glm::vec3(1,0,0));
     m_camera->update();
 }
 

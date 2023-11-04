@@ -24,12 +24,19 @@ void Game::run() {
     std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/test.tk");
-    for (int j = -20; j < 20; ++j) {
-        for (int i = -20; i < 20; ++i) {
+    for (int j = -5; j < 5; ++j) {
+        for (int i = -5; i < 5; ++i) {
             models.emplace_back(&model);
-            models[models.size() - 1].translate(glm::vec3(i*0.1, j*0.1, -10.0f));
+            models[models.size() - 1].translate(glm::vec3(i*0.5, 0, -j*0.5));
         }
     }
+
+    Model model2;
+    model2.loadFromFile("rsc/models/floor.tk");
+    ModelObject floor(&model2);
+    floor.scale(glm::vec3(4));
+    floor.rotate(glm::radians(90.0f),glm::vec3(-1,0,0));
+    floor.translate(glm::vec3(0, 0, 0));
     std::cout << models.size() << std::endl;
     int frameCount = 0;
     double totalTime = 0.0;
@@ -48,9 +55,10 @@ void Game::run() {
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         for (auto &model: models) {
-            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+            model.rotate(100.0f * deltaTime, glm::vec3(0, 1, 0),0);
             m_window->draw(model);
         }
+        m_window->draw(floor);
         m_window->display();
 
         frameCount++;
