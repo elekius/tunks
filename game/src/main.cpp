@@ -13,7 +13,6 @@ int main(int argc, char *argv[]) {
     if (!glfwInit()) {
         TK_LOG_F << "GLFW initialization failed";
     }
-    ModelLoader::loadModel("rsc/models/fen.tk");
     Game game;
     game.run();
 }

@@ -1,7 +1,11 @@
 #include "ModelLoader.hpp"
 #include "engine/utils/Log.hpp"
+#include "glad/glad.h"
+#include "stb_image.h"
+#include <filesystem>
+namespace fs = std::filesystem;
 
-ModelData *ModelLoader::loadModel(std::string path) {
+ModelData *ModelLoader::loadModel(const std::string& path) {
     TK_LOG << "Try loading model file: " << path;
     std::ifstream in = std::ifstream(path, std::ios::in | std::ios::binary);
     if (!in.is_open()) {
@@ -12,7 +16,7 @@ ModelData *ModelLoader::loadModel(std::string path) {
     uint32 numMaterials = 0;
     in.read((char*)&numMaterials, 4);
     for (uint32 i = 0; i < numMaterials; ++i) {
-        Materiall material{};
+        MaterialData material{};
         in.read((char*)&material.diffuse,12);
         in.read((char*)&material.specular,12);
         in.read((char*)&material.emissive,12);
@@ -28,14 +32,17 @@ ModelData *ModelLoader::loadModel(std::string path) {
             diffuseMapName = "";
             material.hasTexture = false;
         }
-        material.normalMap = diffuseMapName;
-        modelData->materials.push_back(std::move(material));
+        // maybe a bit overkill, but I don't want to do it with sub string
+        fs::path tmpPath = path;
+        fs::path parentDirectory = tmpPath.parent_path();
+        material.diffuseMapId = loadTexture(parentDirectory.string() + "/"+ diffuseMapName);
+        modelData->materials.push_back(material);
     }
 
     uint32 numMeshes = 0;
     in.read((char*)&numMeshes,4);
     for (uint32 i = 0; i < numMeshes; ++i) {
-        std::shared_ptr<Meshh> mesh = std::make_shared<Meshh>();
+        std::shared_ptr<MeshData> mesh = std::make_shared<MeshData>();
         uint32 materialIndex = 0;
         uint32 numVertices = 0;
         uint32 numIndices = 0;
@@ -43,15 +50,11 @@ ModelData *ModelLoader::loadModel(std::string path) {
         in.read((char*)&numVertices,4);
         in.read((char*)&numIndices,4);
         for (uint32 j = 0; j < numVertices; ++j) {
-            glm::vec3 position{};
-            glm::vec3 normal{};
-            glm::vec2 texCoord{};
-            in.read((char*)&position,12);
-            in.read((char*)&normal,12);
-            in.read((char*)&texCoord,8);
-            mesh->positions.push_back(position);
-            mesh->normals.push_back(normal);
-            mesh->texCoords.push_back(texCoord);
+            Vertex vertex{};
+            in.read((char*)&vertex.position,12);
+            in.read((char*)&vertex.normal,12);
+            in.read((char*)&vertex.textureCoord,8);
+            mesh->vertices.push_back(vertex);
         }
         for (uint32 j = 0; j < numIndices; ++j) {
             uint32 index = 0;
@@ -59,6 +62,34 @@ ModelData *ModelLoader::loadModel(std::string path) {
             mesh->indices.push_back(index);
         }
         mesh->material = modelData->materials[materialIndex];
+        modelData->meshes.push_back(mesh);
     }
     return modelData;
+}
+
+GLuint ModelLoader::loadTexture(const std::string &path) {
+    GLuint diffuseMapId = 0;
+    int32 textureWidth = 0;
+    int32 textureHeight = 0;
+    int32 bitsPerPixel = 0;
+    glGenTextures(1, &diffuseMapId);
+    stbi_set_flip_vertically_on_load(true);
+    {
+        auto textureBuffer = stbi_load(path.c_str(), &textureWidth, &textureHeight, &bitsPerPixel, 4);
+        std::cout << path.c_str() << std::endl;
+        assert(textureBuffer);
+
+        glBindTexture(GL_TEXTURE_2D, diffuseMapId);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, textureWidth, textureHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, textureBuffer);
+        if(textureBuffer) {
+            stbi_image_free(textureBuffer);
+        }
+    }
+    return diffuseMapId;
 }

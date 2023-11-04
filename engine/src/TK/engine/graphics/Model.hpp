@@ -25,10 +25,7 @@ public:
 
 
 private:
-    std::vector<std::shared_ptr<Material>> m_materials;
     std::vector<std::shared_ptr<Mesh>> m_meshes;
-
-    void createMesh(std::ifstream &inputStream);
 };
 
 #endif

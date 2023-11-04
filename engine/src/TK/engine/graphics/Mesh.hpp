@@ -10,21 +10,18 @@
 #include "glm/glm.hpp"
 #include "Shader.hpp"
 
-struct TKMaterial {
-    glm::vec3 diffuse;
-    glm::vec3 specular;
-    glm::vec3 emissive;
-    float shininess;
-};
 
 /**
  * A simple material struct
  * @author ChikyuKido
  */
 struct Material {
-    TKMaterial material;
+    glm::vec3 diffuse;
+    glm::vec3 specular;
+    glm::vec3 emissive;
+    float shininess;
+    bool hasTexture;
     GLuint diffuseMap;
-    GLuint normalMap;
 };
 
 

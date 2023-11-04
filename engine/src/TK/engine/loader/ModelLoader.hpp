@@ -9,7 +9,8 @@
  */
 class ModelLoader {
 public:
-    static ModelData* loadModel(std::string path);
+    static ModelData* loadModel(const std::string& path);
+    static GLuint loadTexture(const std::string& path);
 };
 
 

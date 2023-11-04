@@ -40,7 +40,7 @@ public:
     void setUniformVec3(const std::string &name, const glm::vec3 &value);
     void setUniformFloat(const std::string &name, const float &value);
     void setUniformInt(const std::string &name, const int &value);
-
+    void setUniformBool(const std::string &name, const bool &value);
 
 private:
     GLuint m_shaderId;
