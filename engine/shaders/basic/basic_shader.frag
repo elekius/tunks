@@ -16,7 +16,7 @@ uniform float u_shininess;
 uniform vec3 u_lightDirection;
 uniform vec3 u_lightColor;
 
-//
+uniform bool has_texture;
 uniform sampler2D u_diffuse_map;
 
 
@@ -25,9 +25,14 @@ void main()
     vec3 view = normalize(-v_position);
     vec3 normal = normalize(v_normal);
 
-    vec4 diffuseColor = texture(u_diffuse_map,v_tex_coord);
-    if(diffuseColor.w < 0.9) {
-        discard;
+    vec4 diffuseColor;
+    if (hasTexture) {
+        diffuseColor = texture(u_diffuse_map, v_tex_coord);
+        if (diffuseColor.w < 0.9) {
+            discard;
+        }
+    } else {
+        diffuseColor = vec4(u_diffuse, 1.0);
     }
 
     //reverse so the light directs to the object

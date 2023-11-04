@@ -24,8 +24,8 @@ void Game::run() {
     std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/fern.tk");
-    for (int j = -1; j < 10; ++j) {
-        for (int i = -1; i < 1; ++i) {
+    for (int j = -0; j < 1; ++j) {
+        for (int i = -0; i < 1; ++i) {
             models.emplace_back(&model);
             models[models.size() - 1].translate(glm::vec3(i*0.08, j*0.08, -0.0f));
         }

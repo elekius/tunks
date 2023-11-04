@@ -27,6 +27,9 @@ set(SOURCE_FILES
         src/TK/engine/graphics/Model.hpp
         src/TK/engine/graphics/ModelObject.cpp
         src/TK/engine/graphics/ModelObject.hpp
+        src/TK/engine/loader/ModelLoader.cpp
+        src/TK/engine/loader/ModelLoader.hpp
+        src/TK/engine/loader/ModelData.hpp
 )
 
 add_library(TK_Engine
@@ -38,7 +41,6 @@ target_include_directories(TK_Engine PUBLIC
 )
 
 target_link_libraries(TK_Engine PUBLIC
-
         easylogging
         GLAD
         GL

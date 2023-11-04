@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 #include "easylogging++.h"
 #include "TK/engine/utils/Log.hpp"
+#include "TK/engine/loader/ModelLoader.hpp"
 #include "Game.hpp"
 
 
@@ -12,6 +13,7 @@ int main(int argc, char *argv[]) {
     if (!glfwInit()) {
         TK_LOG_F << "GLFW initialization failed";
     }
+    ModelLoader::loadModel("rsc/models/fen.tk");
     Game game;
     game.run();
 }
