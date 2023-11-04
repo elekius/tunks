@@ -11,7 +11,7 @@ INITIALIZE_EASYLOGGINGPP
 int main(int argc, char *argv[]) {
     TK_INIT_LOG;
     if (!glfwInit()) {
-        TK_LOG_F << "GLFW initialization failed";
+        TK_LOG_F("Game") << "GLFW initialization failed";
     }
     Game game;
     game.run();

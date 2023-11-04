@@ -10,7 +10,7 @@ Model::Model() = default;
 void Model::loadFromFile(const std::string &path) {
     ModelData* modelData = ModelLoader::loadModel(path);
     if(modelData == nullptr) {
-        TK_LOG_F << "ModelData is empty.";
+        TK_LOG_F("Engine") << "ModelData is empty.";
     }
     for (const auto &meshData: modelData->meshes) {
         std::shared_ptr<VertexBuffer> vertexBuffer = std::make_shared<VertexBuffer>(meshData->vertices,meshData->indices);
@@ -25,7 +25,7 @@ void Model::loadFromFile(const std::string &path) {
         mesh->create(vertexBuffer,material);
         m_meshes.push_back(mesh);
     }
-    TK_LOG << "Successfully created the model";
+    TK_LOG("Engine") << "Successfully created the model";
 }
 
 void Model::draw(const std::shared_ptr<Shader>& shader) {

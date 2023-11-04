@@ -17,11 +17,12 @@
      el::Loggers::reconfigureLogger("default", conf); \
      el::Loggers::addFlag(el::LoggingFlag::ColoredTerminalOutput);
 
-#define TK_LOG LOG(INFO)
-#define TK_LOG_W LOG(WARNING)
-#define TK_LOG_E LOG(ERROR)
-#define TK_LOG_F LOG(FATAL)
-#define TK_LOG_D LOG(DEBUG)
+#define TK_LOG(group) LOG(INFO) << "[" << (group) << "] "
+#define TK_LOG_W(group) LOG(WARNING) << "[" << (group) << "] "
+#define TK_LOG_E(group) LOG(ERROR) << "[" << (group) << "] "
+#define TK_LOG_F(group) LOG(FATAL) << "[" << (group) << "] "
+#define TK_LOG_D(group) LOG(DEBUG) << "[" << (group) << "] "
+
 
 
 #endif

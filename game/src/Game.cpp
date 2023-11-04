@@ -23,11 +23,11 @@ void Game::run() {
     init();
     std::vector<ModelObject> models;
     Model model;
-    model.loadFromFile("rsc/models/fen.tk");
-    for (int j = -1; j < 2; ++j) {
-        for (int i = -1; i < 2; ++i) {
+    model.loadFromFile("rsc/models/test.tk");
+    for (int j = -20; j < 20; ++j) {
+        for (int i = -20; i < 20; ++i) {
             models.emplace_back(&model);
-            models[models.size() - 1].translate(glm::vec3(i*250, j*250, -350.0f));
+            models[models.size() - 1].translate(glm::vec3(i*0.2, j*0.2, -10.0f));
         }
     }
     int frameCount = 0;
@@ -72,7 +72,7 @@ void Game::run() {
 
 void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity, GLsizei length, const GLchar *message,
                          const void *userParam) {
-    TK_LOG << "[OpenGL] " << message;
+    TK_LOG("OpenGL")  << message;
 }
 
 void Game::init() {

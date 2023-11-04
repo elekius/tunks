@@ -6,15 +6,16 @@
 namespace fs = std::filesystem;
 
 ModelData *ModelLoader::loadModel(const std::string& path) {
-    TK_LOG << "Try loading model file: " << path;
+    TK_LOG("Engine") << "Try loading model file: " << path;
     std::ifstream in = std::ifstream(path, std::ios::in | std::ios::binary);
     if (!in.is_open()) {
-        TK_LOG_F << "Error reading model file: " << path;
+        TK_LOG_F("Engine") << "Error reading model file: " << path;
     }
     auto* modelData = new ModelData();
     //reading in the materials
     uint32 numMaterials = 0;
     in.read((char*)&numMaterials, 4);
+    TK_LOG("Engine") << "Model has " << numMaterials << " Materials";
     for (uint32 i = 0; i < numMaterials; ++i) {
         MaterialData material{};
         in.read((char*)&material.diffuse,12);
@@ -38,9 +39,10 @@ ModelData *ModelLoader::loadModel(const std::string& path) {
         material.diffuseMapId = loadTexture(parentDirectory.string() + "/"+ diffuseMapName);
         modelData->materials.push_back(material);
     }
-
+    TK_LOG("Engine") << "Finished loading materials start loading meshes";
     uint32 numMeshes = 0;
     in.read((char*)&numMeshes,4);
+    TK_LOG("Engine") << "Found " << numMeshes << " meshes";
     for (uint32 i = 0; i < numMeshes; ++i) {
         std::shared_ptr<MeshData> mesh = std::make_shared<MeshData>();
         uint32 materialIndex = 0;
@@ -64,10 +66,12 @@ ModelData *ModelLoader::loadModel(const std::string& path) {
         mesh->material = modelData->materials[materialIndex];
         modelData->meshes.push_back(mesh);
     }
+    TK_LOG("Engine") << "Successfully load model";
     return modelData;
 }
 
 GLuint ModelLoader::loadTexture(const std::string &path) {
+    TK_LOG("Engine") << "Loading texture: " << path;
     GLuint diffuseMapId = 0;
     int32 textureWidth = 0;
     int32 textureHeight = 0;
@@ -76,7 +80,6 @@ GLuint ModelLoader::loadTexture(const std::string &path) {
     stbi_set_flip_vertically_on_load(true);
     {
         auto textureBuffer = stbi_load(path.c_str(), &textureWidth, &textureHeight, &bitsPerPixel, 4);
-        std::cout << path.c_str() << std::endl;
         assert(textureBuffer);
 
         glBindTexture(GL_TEXTURE_2D, diffuseMapId);

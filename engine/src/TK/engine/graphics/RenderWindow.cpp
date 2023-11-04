@@ -50,23 +50,23 @@ void RenderWindow::initSDL(int width, int height) {
     glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
     m_window = glfwCreateWindow(width, height, "Tunks", nullptr, nullptr);
     if (m_window == nullptr) {
-        TK_LOG_F << "Window creation failed";
+        TK_LOG_F("Engine") << "Window creation failed";
     }
 }
 
 void RenderWindow::initOpenGL() {
     glfwMakeContextCurrent(m_window);
     if (!gladLoadGL()) {
-        TK_LOG_F << "GLAD initialization failed";
+        TK_LOG_F("Engine")  << "GLAD initialization failed";
     }
-    TK_LOG << "Running with OpenGL version: " << glGetString(GL_VERSION);
+    TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
     glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {
     m_camera = std::make_shared<Camera>(90.0f,16/9);
-    m_camera->translate(glm::vec3(0.0f, 0.0f, 250.0f));
+    m_camera->translate(glm::vec3(0.0f, 0.0f, 0.0f));
     m_camera->update();
 }
 
