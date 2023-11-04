@@ -4,7 +4,8 @@
 void UniformBuffer::createBuffer() {
     glGenBuffers(1, &m_bufferId);
     glBindBuffer(GL_UNIFORM_BUFFER, m_bufferId);
-    glBufferData(GL_UNIFORM_BUFFER, 1 * sizeof(glm::mat4), nullptr, GL_DYNAMIC_DRAW);
+    glBufferData(GL_UNIFORM_BUFFER, 1000 * sizeof(glm::mat4), nullptr, GL_DYNAMIC_DRAW);
+    glBindBufferBase(GL_UNIFORM_BUFFER,0,m_bufferId);
     glBindBuffer(GL_UNIFORM_BUFFER, 0);
 }
 void UniformBuffer::bind() {

@@ -65,7 +65,6 @@ void RenderWindow::display() {
     }
     m_shader->unbind();
     m_renderQueue.clear();
-
     glfwSwapBuffers(m_window);
 }
 
@@ -85,7 +84,7 @@ void RenderWindow::initOpenGL() {
     }
     TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-   // glfwSwapInterval(0);
+    glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {

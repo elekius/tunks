@@ -24,12 +24,13 @@ void Game::run() {
     std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/test.tk");
-    for (int j = -1; j < 0; ++j) {
-        for (int i = -1; i < 0; ++i) {
+    for (int j = -20; j < 20; ++j) {
+        for (int i = -10; i < 10; ++i) {
             models.emplace_back(&model);
             models[models.size() - 1].translate(glm::vec3(i*0.2, j*0.2, -10.0f));
         }
     }
+    std::cout << models.size() << std::endl;
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;

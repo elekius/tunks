@@ -4,7 +4,6 @@
 #include "Shader.hpp"
 
 void Mesh::draw(const std::shared_ptr<Shader>& shader,int instances) {
-    std::cout << instances << std::endl;
     m_vertexBuffer->bind();
     //fragment shader uniforms
     shader->setUniformVec3("u_specular",m_material->specular);
