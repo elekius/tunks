@@ -1,8 +1,10 @@
 
+#include <iostream>
 #include "Mesh.hpp"
 #include "Shader.hpp"
 
-void Mesh::draw(const std::shared_ptr<Shader>& shader) {
+void Mesh::draw(const std::shared_ptr<Shader>& shader,int instances) {
+    std::cout << instances << std::endl;
     m_vertexBuffer->bind();
     //fragment shader uniforms
     shader->setUniformVec3("u_specular",m_material->specular);
@@ -15,7 +17,7 @@ void Mesh::draw(const std::shared_ptr<Shader>& shader) {
     }else {
         shader->setUniformVec3("u_diffuse",m_material->diffuse);
     }
-    glDrawElements(GL_TRIANGLES, m_vertexBuffer->getNumIndices(), GL_UNSIGNED_INT, nullptr);
+    glDrawElementsInstanced(GL_TRIANGLES, m_vertexBuffer->getNumIndices(), GL_UNSIGNED_INT, nullptr,instances);
 }
 
 

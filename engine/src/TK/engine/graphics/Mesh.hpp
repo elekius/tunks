@@ -35,7 +35,6 @@ public:
      * Creates a new Mesh
      */
     Mesh();
-
     virtual ~Mesh();
 
     /**
@@ -49,12 +48,10 @@ public:
      * Sets the uniforms for the fragment shader also the material settings
      * @param shader The basic shader
      */
-    void draw(const std::shared_ptr<Shader>& shader);
+    void draw(const std::shared_ptr<Shader>& shader,int instances);
 
 private:
     std::shared_ptr<Material> m_material;
     std::shared_ptr<VertexBuffer> m_vertexBuffer;
 };
-
-
 #endif

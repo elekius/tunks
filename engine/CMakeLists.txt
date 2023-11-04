@@ -30,6 +30,8 @@ set(SOURCE_FILES
         src/TK/engine/loader/ModelLoader.cpp
         src/TK/engine/loader/ModelLoader.hpp
         src/TK/engine/loader/ModelData.hpp
+        src/TK/engine/graphics/UniformBuffer.hpp
+        src/TK/engine/graphics/UniformBuffer.cpp
 )
 
 add_library(TK_Engine

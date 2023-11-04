@@ -24,8 +24,8 @@ void Game::run() {
     std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/test.tk");
-    for (int j = -20; j < 20; ++j) {
-        for (int i = -20; i < 20; ++i) {
+    for (int j = -1; j < 0; ++j) {
+        for (int i = -1; i < 0; ++i) {
             models.emplace_back(&model);
             models[models.size() - 1].translate(glm::vec3(i*0.2, j*0.2, -10.0f));
         }
@@ -45,7 +45,7 @@ void Game::run() {
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         for (auto &model: models) {
-            model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
+          //  model.rotate(1.0f * deltaTime, glm::vec3(0, 1, 0));
             m_window->draw(model);
         }
         m_window->display();

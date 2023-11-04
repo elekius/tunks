@@ -7,6 +7,7 @@
 #include "Model.hpp"
 #include "Shader.hpp"
 #include "ModelObject.hpp"
+#include "UniformBuffer.hpp"
 
 /**
  * The wrapper class for the SDL window and the opengl initialization. It contains the camera and is responsible for rendering RenderModels.
@@ -29,22 +30,24 @@ public:
      */
     void draw(ModelObject &modelObject);
 
-    /**
-     * Waits for the current frame to finish. Uses SDL_GL_SwapWindow.
-     */
+
     void display();
-
     void resize(int newWidth,int newHeight);
+    [[nodiscard]] GLFWwindow *getWindow() const;
+    [[nodiscard]] const std::shared_ptr<Camera> &getCamera() const;
+    void setLightPosition(glm::vec3 position);
+    void setLightColor(glm::vec3 color);
 
-    GLFWwindow *getWindow() const;
 
 private:
     GLFWwindow *m_window;
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
     std::vector<ModelObject*> m_renderQueue;
+    std::map<Mesh*,UniformBuffer> m_uniformBuffers;
+    glm::vec3 m_lightPos;
 
-    void initSDL(int width,int height);
+    void initWindow(int width, int height);
     void initOpenGL();
     void initCamera();
 };

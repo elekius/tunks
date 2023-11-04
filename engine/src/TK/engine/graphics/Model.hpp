@@ -23,9 +23,9 @@ public:
      */
     void draw(const std::shared_ptr<Shader>& shader);
 
+    const std::vector<std::shared_ptr<Mesh>> &getMeshes() const;
 
 private:
     std::vector<std::shared_ptr<Mesh>> m_meshes;
 };
-
 #endif

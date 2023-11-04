@@ -18,25 +18,27 @@ ModelData *ModelLoader::loadModel(const std::string& path) {
     TK_LOG("Engine") << "Model has " << numMaterials << " Materials";
     for (uint32 i = 0; i < numMaterials; ++i) {
         MaterialData material{};
-        in.read((char*)&material.diffuse,12);
-        in.read((char*)&material.specular,12);
-        in.read((char*)&material.emissive,12);
-        in.read((char*)&material.shininess,4);
+        in.read((char *) &material.diffuse, 12);
+        in.read((char *) &material.specular, 12);
+        in.read((char *) &material.emissive, 12);
+        in.read((char *) &material.shininess, 4);
 
         uint32 lengthDiffuseMapString = 0;
-        in.read((char*)&lengthDiffuseMapString,4);
+        in.read((char *) &lengthDiffuseMapString, 4);
         std::string diffuseMapName(lengthDiffuseMapString, '\0');
-        if(lengthDiffuseMapString != 0) {
-            in.read((char*)&diffuseMapName[0],lengthDiffuseMapString);
+        if (lengthDiffuseMapString != 0) {
+            in.read((char *) &diffuseMapName[0], lengthDiffuseMapString);
             material.hasTexture = true;
-        }else {
+        } else {
             diffuseMapName = "";
             material.hasTexture = false;
         }
         // maybe a bit overkill, but I don't want to do it with sub string
-        fs::path tmpPath = path;
-        fs::path parentDirectory = tmpPath.parent_path();
-        material.diffuseMapId = loadTexture(parentDirectory.string() + "/"+ diffuseMapName);
+        if (!diffuseMapName.empty()) {
+            fs::path tmpPath = path;
+            fs::path parentDirectory = tmpPath.parent_path();
+            material.diffuseMapId = loadTexture(parentDirectory.string() + "/" + diffuseMapName);
+        }
         modelData->materials.push_back(material);
     }
     TK_LOG("Engine") << "Finished loading materials start loading meshes";

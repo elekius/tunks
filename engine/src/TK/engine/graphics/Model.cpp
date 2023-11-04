@@ -30,7 +30,10 @@ void Model::loadFromFile(const std::string &path) {
 
 void Model::draw(const std::shared_ptr<Shader>& shader) {
     for (auto &mesh: m_meshes) {
-        mesh->draw(shader);
+        mesh->draw(shader,1);
     }
+}
+const std::vector<std::shared_ptr<Mesh>> &Model::getMeshes() const {
+    return m_meshes;
 }
 

@@ -35,13 +35,13 @@ public:
     void draw(std::shared_ptr<Shader> shader);
 
     void setModel(Model *model);
-    [[nodiscard]] const glm::mat4 &getMatrix() const;
-    void setMatrix(const glm::mat4 &matrix);
+    [[nodiscard]] const std::vector<glm::mat4> &getMatrices() const;
 
+    [[nodiscard]] Model *getModel() const;
 
 private:
     Model* m_model;
-    glm::mat4 m_matrix;
+    std::vector<glm::mat4> m_matrices;
 };
 
 
