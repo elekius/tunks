@@ -3,6 +3,7 @@
 #include "Model.hpp"
 #include "engine/utils/Log.hpp"
 #include "ModelObject.hpp"
+#include "engine/debug/Instrumentor.hpp"
 
 RenderWindow::RenderWindow(int width, int height) {
     initWindow(width, height);
@@ -24,29 +25,40 @@ void RenderWindow::draw(ModelObject &modelObject) {
     m_renderQueue.push_back(&modelObject);
 }
 void RenderWindow::display() {
+    TK_PROFILE_FUNCTION();
     m_shader->bind();
-    for (const auto &modelObject : m_renderQueue) {
-        const Model* model = modelObject->getModel();
-        if(!model) continue;
-        for (int i = 0;i<model->getMeshes().size();++i) {
-            if(m_matrices.find(model->getMeshes()[i].get()) == m_matrices.end()) {
-                m_matrices[model->getMeshes()[i].get()] = std::vector<glm::mat4>();
+    {
+        TK_PROFILE_SCOPE("Combining Meshes");
+        for (const auto &modelObject: m_renderQueue) {
+            const Model *model = modelObject->getModel();
+            if (!model) continue;
+            for (int i = 0; i < model->getMeshes().size(); ++i) {
+                if (m_matrices.find(model->getMeshes()[i].get()) == m_matrices.end()) {
+                    m_matrices[model->getMeshes()[i].get()] = std::vector<glm::mat4>();
+                }
+                m_matrices[model->getMeshes()[i].get()].push_back(modelObject->getMatrices()[i]);
             }
-            m_matrices[model->getMeshes()[i].get()].push_back(modelObject->getMatrices()[i]);
         }
     }
     glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(m_lightPos,1.0f);
     m_shader->setUniformVec3("u_lightDirection",lightDirection);
     m_shader->setUniformMatrix4fv("u_CameraViewProj",m_camera->getViewProj());
     for (auto &pair: m_matrices) {
-        m_uniformBuffer.updateData(m_matrices[pair.first]);
-        m_uniformBuffer.bind();
+        TK_PROFILE_SCOPE("DrawMesh");
+        {
+            TK_PROFILE_SCOPE("BindingMeshDataUniform");
+            m_uniformBuffer.updateData(m_matrices[pair.first]);
+            m_uniformBuffer.bind();
+        }
         pair.first->draw(m_shader,m_matrices[pair.first].size());
     }
     m_shader->unbind();
     m_renderQueue.clear();
     m_matrices.clear();
-    glfwSwapBuffers(m_window);
+    {
+        TK_PROFILE_SCOPE("SwapBuffersAndWait");
+        glfwSwapBuffers(m_window);
+    }
 }
 
 

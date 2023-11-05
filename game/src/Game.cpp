@@ -21,23 +21,19 @@ void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
 
 void Game::run() {
     init();
-    std::vector<ModelObject> models;
     Model model;
     model.loadFromFile("rsc/models/test.tk");
-    for (int j = -5; j < 5; ++j) {
-        for (int i = -5; i < 5; ++i) {
-            models.emplace_back(&model);
-            models[models.size() - 1].translate(glm::vec3(i*0.5, 0, -j*0.5));
-        }
-    }
+    ModelObject tank(&model);
+    tank.translate(glm::vec3(0,0,0));
+ //   tank.scale(glm::vec3(0.1,0.1,0.1));
 
     Model model2;
     model2.loadFromFile("rsc/models/floor.tk");
     ModelObject floor(&model2);
     floor.scale(glm::vec3(4));
-    floor.rotate(glm::radians(90.0f),glm::vec3(-1,0,0));
+    floor.rotate(90.0f,glm::vec3(-1,0,0));
     floor.translate(glm::vec3(0, 0, 0));
-    std::cout << models.size() << std::endl;
+
     int frameCount = 0;
     double totalTime = 0.0;
     double fps = 0.0;
@@ -51,13 +47,13 @@ void Game::run() {
         auto currentTime = std::chrono::high_resolution_clock::now();
         float deltaTime = std::chrono::duration<float>(currentTime - prevTime).count();
         prevTime = currentTime;
-
+//        m_window->getCamera()->rotate(100.0f*deltaTime,glm::vec3(0, -1, 0));
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        for (auto &model: models) {
-            model.rotate(100.0f * deltaTime, glm::vec3(0, 1, 0),0);
-            m_window->draw(model);
-        }
+//        tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
+//        tank.rotate(10.0f * deltaTime, glm::vec3(0, 1, 0),1);
+        m_window->draw(tank);
+
         m_window->draw(floor);
         m_window->display();
 

@@ -30,7 +30,6 @@ public:
      */
     void draw(ModelObject &modelObject);
 
-
     void display();
     void resize(int newWidth,int newHeight);
     [[nodiscard]] GLFWwindow *getWindow() const;

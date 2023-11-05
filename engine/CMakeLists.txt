@@ -32,6 +32,7 @@ set(SOURCE_FILES
         src/TK/engine/loader/ModelData.hpp
         src/TK/engine/graphics/UniformBuffer.hpp
         src/TK/engine/graphics/UniformBuffer.cpp
+        "src/TK/engine/debug/Instrumentor.hpp"
 )
 
 add_library(TK_Engine

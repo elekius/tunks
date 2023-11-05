@@ -58,6 +58,7 @@ ModelData *ModelLoader::loadModel(const std::string& path) {
             in.read((char*)&vertex.position,12);
             in.read((char*)&vertex.normal,12);
             in.read((char*)&vertex.textureCoord,8);
+            std::cout << vertex.position.x << "," << vertex.position.y << "," << vertex.position.z << std::endl;
             mesh->vertices.push_back(vertex);
         }
         for (uint32 j = 0; j < numIndices; ++j) {

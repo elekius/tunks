@@ -5,8 +5,8 @@
 #include "Model.hpp"
 
 /**
- * A simple wrapper for the Model. It contains a reference to the actual model and just stores a own matrix.
- * This matrix then gets applied before the draw and so you can have multiple objects with only one model.
+ * A simple wrapper for the Model. It contains a reference to the actual model and just stores a own vector of matrix.
+ * Each matrix is for each mesh the model has. So you can transform each mesh like you want.
  * @see Model.hpp
  * @author ChikyuKido
  */
@@ -19,7 +19,6 @@ public:
      * @param move the vec3 to move
      */
     void translate(glm::vec3 move);
-
     /**
      * Rotates the model in the given degrees in the given axis
      * @param degrees the degrees to rotate
@@ -27,32 +26,31 @@ public:
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    /**
+     * Scales the model.
+     * @param scale a vec3 to scale the model
+     */
     void scale(glm::vec3 scale);
 
     /**
- * Moves the model with the given value
- * @param move the vec3 to move
- */
+     * Moves the mesh at the position index with the given value
+     * @param move the vec3 to move
+     */
     void translate(glm::vec3 move,int index);
-
     /**
-     * Rotates the model in the given degrees in the given axis
+     * Rotates the mesh at the position index in the given degrees in the given axis
      * @param degrees the degrees to rotate
      * @param axis the axis in which it should be rotated
      */
     void rotate(float degrees, glm::vec3 axis,int index);
-
-    void scale(glm::vec3 scale,int index);
-
     /**
-     * Draws the model to the screen.
-     * @param shader
+     * Scales the mesh at the position index.
+     * @param scale a vec3 to scale the model
      */
-    void draw(std::shared_ptr<Shader> shader);
+    void scale(glm::vec3 scale,int index);
 
     void setModel(Model *model);
     [[nodiscard]] const std::vector<glm::mat4> &getMatrices() const;
-
     [[nodiscard]] Model *getModel() const;
 
 private:

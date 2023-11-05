@@ -1,9 +1,11 @@
 
-#include <iostream>
+
 #include "Mesh.hpp"
 #include "Shader.hpp"
+#include "engine/debug/Instrumentor.hpp"
 
 void Mesh::draw(const std::shared_ptr<Shader>& shader,int instances) {
+    TK_PROFILE_FUNCTION();
     m_vertexBuffer->bind();
     //fragment shader uniforms
     shader->setUniformVec3("u_specular",m_material->specular);

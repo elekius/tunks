@@ -22,6 +22,11 @@ public:
      * Updates the view projection each frame
      */
     virtual void update();
+    /**
+     * Resizes the camera to a new viewport.
+     * @param width
+     * @param height
+     */
     void resize(int width,int height);
 
     /**

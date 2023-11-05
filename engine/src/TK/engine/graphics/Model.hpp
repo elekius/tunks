@@ -6,7 +6,7 @@
 #include "Mesh.hpp"
 
 /**
- * The imported rendermodel. It consists of meshes.
+ * This class representing the 3D model which consists of meshes.
  * @author ChikyuKido
  */
 class Model {
@@ -17,13 +17,7 @@ public:
      * @param path the path to the tk file
      */
     void loadFromFile(const std::string& path);
-    /**
-     * Draws all the meshes
-     * @param shader the basic shader so the meshes can apply their material to the basic shader when drawing
-     */
-    void draw(const std::shared_ptr<Shader>& shader);
-
-    const std::vector<std::shared_ptr<Mesh>> &getMeshes() const;
+    [[nodiscard]] const std::vector<std::shared_ptr<Mesh>> &getMeshes() const;
 
 private:
     std::vector<std::shared_ptr<Mesh>> m_meshes;

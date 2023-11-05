@@ -7,7 +7,10 @@
 #include <vector>
 #include "glm/glm.hpp"
 #include <glad/glad.h>
-
+/**
+ *
+ * @author ChikyuKido
+ */
 class UniformBuffer {
 public:
     virtual ~UniformBuffer();

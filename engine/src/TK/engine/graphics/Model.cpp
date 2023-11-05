@@ -28,11 +28,6 @@ void Model::loadFromFile(const std::string &path) {
     TK_LOG("Engine") << "Successfully created the model";
 }
 
-void Model::draw(const std::shared_ptr<Shader>& shader) {
-    for (auto &mesh: m_meshes) {
-        mesh->draw(shader,1);
-    }
-}
 const std::vector<std::shared_ptr<Mesh>> &Model::getMeshes() const {
     return m_meshes;
 }
