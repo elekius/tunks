@@ -98,7 +98,7 @@ public:
     InstrumentationTimer(const char* name)
             : m_Name(name), m_Stopped(false)
     {
-        m_StartTimepoint = std::chrono::high_resolution_clock::now();
+        m_StartTimepoint = now();
     }
 
     ~InstrumentationTimer()
@@ -123,9 +123,13 @@ private:
     const char* m_Name;
     std::chrono::time_point<std::chrono::high_resolution_clock> m_StartTimepoint;
     bool m_Stopped;
+    static std::chrono::high_resolution_clock::time_point now() {
+        std::this_thread::sleep_for(std::chrono::nanoseconds(1));
+        return std::chrono::high_resolution_clock::now();
+    }
 };
 
-#define PROFILING 1
+//#define PROFILING
 #ifdef PROFILING
 #define TK_PROFILE_BEGIN_SESSION(name,filepath) Instrumentor::Get().BeginSession(name,filepath)
 #define TK_PROFILE_END_SESSION() Instrumentor::Get().EndSession()

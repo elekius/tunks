@@ -4,7 +4,11 @@
 #include "Shader.hpp"
 #include "engine/debug/Instrumentor.hpp"
 
-void Mesh::draw(const std::shared_ptr<Shader>& shader,int instances) {
+
+
+
+
+void Mesh::draw(const std::shared_ptr<Shader>& shader,int instances) const {
     TK_PROFILE_FUNCTION();
     m_vertexBuffer->bind();
     //fragment shader uniforms
@@ -27,7 +31,7 @@ void Mesh::create(std::shared_ptr<VertexBuffer> vertexBuffer, std::shared_ptr<Ma
     m_material = material;
 }
 
-Mesh::Mesh() {}
+Mesh::Mesh()  {}
 
 Mesh::~Mesh() {
 

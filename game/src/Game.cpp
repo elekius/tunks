@@ -23,9 +23,16 @@ void Game::run() {
     init();
     Model model;
     model.loadFromFile("rsc/models/test.tk");
-    ModelObject tank(&model);
-    tank.translate(glm::vec3(0,0,0));
- //   tank.scale(glm::vec3(0.1,0.1,0.1));
+    std::vector<ModelObject> objects;
+    for (int i = -1; i < 1; ++i) {
+        for (int j = -1; j < 1; ++j) {
+            ModelObject tank(&model);
+            tank.translate(glm::vec3(i*0.1,0,j*0.1));
+            objects.push_back(tank);
+        }
+    }
+
+    //   tank.scale(glm::vec3(0.1,0.1,0.1));
 
     Model model2;
     model2.loadFromFile("rsc/models/floor.tk");
@@ -52,7 +59,9 @@ void Game::run() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 //        tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
 //        tank.rotate(10.0f * deltaTime, glm::vec3(0, 1, 0),1);
-        m_window->draw(tank);
+        for (auto &modelObject: objects) {
+            m_window->draw(modelObject);
+        }
 
         m_window->draw(floor);
         m_window->display();

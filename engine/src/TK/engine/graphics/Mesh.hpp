@@ -48,9 +48,11 @@ public:
      * @param shader - A shared pointer to the Shader program to use for rendering.
      * @param instances - The number of instances to render (for instanced rendering).
      */
-    void draw(const std::shared_ptr<Shader>& shader,int instances);
+    void draw(const std::shared_ptr<Shader>& shader,int instances) const;
+
 
 private:
+
     std::shared_ptr<Material> m_material;
     std::shared_ptr<VertexBuffer> m_vertexBuffer;
 };

@@ -43,7 +43,7 @@ private:
     std::shared_ptr<Camera> m_camera;
     std::shared_ptr<Shader> m_shader;
     std::vector<ModelObject*> m_renderQueue;
-    std::map<Mesh*,std::vector<glm::mat4>> m_matrices;
+    std::unordered_map<const Mesh*,std::vector<glm::mat4>> m_matrices;
     UniformBuffer m_uniformBuffer;
     glm::vec3 m_lightPos;
 

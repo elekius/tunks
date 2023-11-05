@@ -29,17 +29,29 @@ void RenderWindow::display() {
     m_shader->bind();
     {
         TK_PROFILE_SCOPE("Combining Meshes");
-        for (const auto &modelObject: m_renderQueue) {
-            const Model *model = modelObject->getModel();
+
+        std::unordered_map<const Mesh*, std::vector<glm::mat4>> tmpMatrices;
+        tmpMatrices.reserve(m_renderQueue.size());
+        for (const auto& modelObject : m_renderQueue) {
+            const Model* model = modelObject->getModel();
             if (!model) continue;
-            for (int i = 0; i < model->getMeshes().size(); ++i) {
-                if (m_matrices.find(model->getMeshes()[i].get()) == m_matrices.end()) {
-                    m_matrices[model->getMeshes()[i].get()] = std::vector<glm::mat4>();
-                }
-                m_matrices[model->getMeshes()[i].get()].push_back(modelObject->getMatrices()[i]);
+
+            const auto& modelMeshes = model->getMeshes();
+            const auto& modelMatrices = modelObject->getMatrices();
+
+            for (int i = 0; i < modelMeshes.size(); ++i) {
+                const Mesh* mesh = modelMeshes[i].get();
+                const glm::mat4& matrix = modelMatrices[i];
+                tmpMatrices[mesh].push_back(matrix);
             }
         }
+
+        for (const auto& entry : tmpMatrices) {
+            const Mesh* mesh = entry.first;
+            m_matrices[mesh] = entry.second;
+        }
     }
+
     glm::vec4 lightDirection = glm::transpose(glm::inverse(m_camera->getView())) * glm::vec4(m_lightPos,1.0f);
     m_shader->setUniformVec3("u_lightDirection",lightDirection);
     m_shader->setUniformMatrix4fv("u_CameraViewProj",m_camera->getViewProj());
@@ -78,7 +90,7 @@ void RenderWindow::initOpenGL() {
     }
     TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-   // glfwSwapInterval(0);
+    // glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {

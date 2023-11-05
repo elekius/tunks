@@ -4,7 +4,7 @@
 void UniformBuffer::createBuffer() {
     glGenBuffers(1, &m_bufferId);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, m_bufferId);
-    glBufferData(GL_SHADER_STORAGE_BUFFER, 1600 * sizeof(glm::mat4), nullptr, GL_DYNAMIC_DRAW);
+    glBufferData(GL_SHADER_STORAGE_BUFFER, 40000 * sizeof(glm::mat4), nullptr, GL_DYNAMIC_DRAW);
     glBindBufferBase(GL_SHADER_STORAGE_BUFFER,0,m_bufferId);
     glBindBuffer(GL_SHADER_STORAGE_BUFFER, 0);
 }
