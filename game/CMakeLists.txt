@@ -13,6 +13,8 @@ add_executable(TK_Game
     src/Game.hpp
         src/entity/PlayerTank.cpp
         src/entity/PlayerTank.hpp
+        src/entity/Tank.cpp
+        src/entity/Tank.hpp
 )
 
 target_link_libraries(TK_Game PRIVATE TK_Engine)

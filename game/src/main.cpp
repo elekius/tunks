@@ -2,7 +2,6 @@
 #include <GLFW/glfw3.h>
 #include "easylogging++.h"
 #include "TK/engine/utils/Log.hpp"
-#include "TK/engine/loader/ModelLoader.hpp"
 #include "Game.hpp"
 #include "TK/engine/debug/Instrumentor.hpp"
 

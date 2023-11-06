@@ -2,9 +2,9 @@
 #define TUNKS_VERTEXBUFFER_HPP
 
 #include <glad/glad.h>
-#include "../Defines.hpp"
-#include "Vertex.hpp"
 #include <vector>
+#include "TK/engine/Defines.hpp"
+#include "Vertex.hpp"
 
 /**
  * A simple vertexBuffer class. That uses VAO for storing the vertices buffer and the indices buffer.

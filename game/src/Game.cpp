@@ -58,6 +58,7 @@ void Game::run() {
 //        m_tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
 //
         m_tank->draw(*m_window);
+        m_tank->update(deltaTime);
 
         m_window->draw(floor);
         m_window->display();

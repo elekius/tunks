@@ -8,14 +8,15 @@
 
 #include "TK/engine/graphics/ModelObject.hpp"
 #include "TK/engine/graphics/RenderWindow.hpp"
+#include "Tank.hpp"
 
-class PlayerTank {
+class PlayerTank : public Tank{
 public:
     PlayerTank();
-    void draw(RenderWindow &renderWindow);
+    void update(float deltaTime) override;
+    void draw(RenderWindow &window) override;
 private:
     bool left=false,right=false,up=false,down=false;
-    ModelObject* modelObject;
 };
 
 

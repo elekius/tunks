@@ -1,5 +1,6 @@
 #include "ModelObject.hpp"
 #include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 
 ModelObject::ModelObject() : ModelObject(nullptr) {}
 ModelObject::ModelObject(Model *model) : m_model(model) {
@@ -48,11 +49,21 @@ Model *ModelObject::getModel() const {
 const std::vector<glm::mat4> &ModelObject::getMatrices() const {
     return m_matrices;
 }
+void resetRotation(glm::mat4 &matrix){
+    glm::vec3 translation, skew;
+    glm::vec4 perspective;
+    glm::quat rotation;
+    glm::vec3 scale;
+    glm::decompose(matrix, scale, rotation, translation, skew, perspective);
 
+    matrix = glm::mat4(1.0f);
+    matrix = glm::translate(matrix, translation);
+    matrix = glm::scale(matrix, scale);
+}
 void ModelObject::setRotation(float degrees, glm::vec3 axis) {
     for (auto &matrix: m_matrices) {
-        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(degrees), axis);
-        matrix *= rotationMatrix;
+        resetRotation(matrix);
+        matrix = glm::rotate(matrix, glm::radians(degrees), axis);
     }
 }
 
