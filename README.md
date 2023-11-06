@@ -11,7 +11,7 @@ This project is not a decompilation or port of Wii Tanks.
 - [ ] _Implement all features available in the original game_
     - [ ]  Basic gameplay
     - [ ]  120 maps
-    - [ ]  Accurate  enemy tank AI
+    - [ ]  Accurate  enemy m_tank AI
     - [ ]  Local co-op
     - [ ]  Wii-mote support
 - [ ] _Additional goals_

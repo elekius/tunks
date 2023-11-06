@@ -33,6 +33,10 @@ set(SOURCE_FILES
         src/TK/engine/graphics/UniformBuffer.hpp
         src/TK/engine/graphics/UniformBuffer.cpp
         "src/TK/engine/debug/Instrumentor.hpp"
+        src/TK/engine/events/Events.hpp
+        src/TK/engine/events/Events.cpp
+        src/TK/engine/handler/KeyHandler.cpp
+        src/TK/engine/handler/KeyHandler.hpp
 )
 
 add_library(TK_Engine

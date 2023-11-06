@@ -49,6 +49,13 @@ const std::vector<glm::mat4> &ModelObject::getMatrices() const {
     return m_matrices;
 }
 
+void ModelObject::setRotation(float degrees, glm::vec3 axis) {
+    for (auto &matrix: m_matrices) {
+        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f), glm::radians(degrees), axis);
+        matrix *= rotationMatrix;
+    }
+}
+
 
 
 

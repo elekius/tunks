@@ -26,6 +26,8 @@ public:
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    void setRotation(float degrees, glm::vec3 axis);
+
     /**
      * Scales the model.
      * @param scale a vec3 to scale the model

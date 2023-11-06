@@ -15,7 +15,7 @@
      conf.setGlobally(el::ConfigurationType::MaxLogFileSize, "2000000");  \
      conf.setGlobally(el::ConfigurationType::LogFlushThreshold, "0"); \
      el::Loggers::reconfigureLogger("default", conf); \
-     el::Loggers::addFlag(el::LoggingFlag::ColoredTerminalOutput);
+     el::Loggers::addFlag(el::LoggingFlag::ColoredTerminalOutput)
 
 #define TK_LOG(group) LOG(INFO) << "[" << (group) << "] "
 #define TK_LOG_W(group) LOG(WARNING) << "[" << (group) << "] "

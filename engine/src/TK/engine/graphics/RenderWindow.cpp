@@ -90,7 +90,7 @@ void RenderWindow::initOpenGL() {
     }
     TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-    // glfwSwapInterval(0);
+    //glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {

@@ -5,34 +5,32 @@
 #include "Game.hpp"
 #include "TK/engine/graphics/RenderWindow.hpp"
 #include "TK/engine/utils/Log.hpp"
+#include "TK/engine/events/Events.hpp"
 
 Game::~Game() {
 }
-
-Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {
-    glfwSetWindowUserPointer(m_window->getWindow(), this);
-}
-
-
 void framebuffer_size_callback(GLFWwindow *window, int width, int height) {
     Game* gameInstance = static_cast<Game*>(glfwGetWindowUserPointer(window));
     gameInstance->resize(width,height);
 }
 
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    Game* gameInstance = static_cast<Game*>(glfwGetWindowUserPointer(window));
+    gameInstance->m_keyHandler.handlerKeyEvent(window,key,scancode,action,mods);
+}
+
+Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {
+    glfwSetWindowUserPointer(m_window->getWindow(), this);
+    glfwSetFramebufferSizeCallback(m_window->getWindow(), framebuffer_size_callback);
+    glfwSetKeyCallback(m_window->getWindow(), key_callback);
+}
+
+
 void Game::run() {
     init();
-    Model model;
-    model.loadFromFile("rsc/models/test.tk");
-    std::vector<ModelObject> objects;
-    for (int i = -1; i < 1; ++i) {
-        for (int j = -1; j < 1; ++j) {
-            ModelObject tank(&model);
-            tank.translate(glm::vec3(i*0.1,0,j*0.1));
-            objects.push_back(tank);
-        }
-    }
+    m_tank = std::make_shared<PlayerTank>();
 
-    //   tank.scale(glm::vec3(0.1,0.1,0.1));
+    //   m_tank.scale(glm::vec3(0.1,0.1,0.1));
 
     Model model2;
     model2.loadFromFile("rsc/models/floor.tk");
@@ -57,11 +55,9 @@ void Game::run() {
 //        m_window->getCamera()->rotate(100.0f*deltaTime,glm::vec3(0, -1, 0));
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
-//        tank.rotate(10.0f * deltaTime, glm::vec3(0, 1, 0),1);
-        for (auto &modelObject: objects) {
-            m_window->draw(modelObject);
-        }
+//        m_tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
+//
+        m_tank->draw(*m_window);
 
         m_window->draw(floor);
         m_window->display();
@@ -78,7 +74,6 @@ void Game::run() {
             std::cout << "FPS: " << fps << std::endl;
         }
 
-        glfwSetFramebufferSizeCallback(m_window->getWindow(), framebuffer_size_callback);
         glfwPollEvents();
         if (glfwWindowShouldClose(m_window->getWindow())) {
             quit = true;
@@ -103,3 +98,4 @@ void Game::init() {
 void Game::resize(int width, int height) {
     m_window->resize(width,height);
 }
+
