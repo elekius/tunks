@@ -6,6 +6,7 @@
 #include "TK/engine/graphics/RenderWindow.hpp"
 #include "TK/engine/utils/Log.hpp"
 #include "TK/engine/events/Events.hpp"
+#include "manager/ResourceManager.hpp"
 
 Game::~Game() {
 }
@@ -28,13 +29,16 @@ Game::Game() : m_window(std::make_shared<RenderWindow>(1200, 600)) {
 
 void Game::run() {
     init();
+
+    //TODO: Remove the loading into a loading screen
+    ResourceManager::get().loadResourceDirectly<Model>("rsc/models/test.tk");
+    ResourceManager::get().loadResourceDirectly<Model>("rsc/models/floor.tk");
+
     m_tank = std::make_shared<PlayerTank>();
 
     //   m_tank.scale(glm::vec3(0.1,0.1,0.1));
 
-    Model model2;
-    model2.loadFromFile("rsc/models/floor.tk");
-    ModelObject floor(&model2);
+    ModelObject floor(ResourceManager::get().getResource<Model>("rsc/models/floor.tk"));
     floor.scale(glm::vec3(4));
     floor.rotate(90.0f,glm::vec3(-1,0,0));
     floor.translate(glm::vec3(0, 0, 0));

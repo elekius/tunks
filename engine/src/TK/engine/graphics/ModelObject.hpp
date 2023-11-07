@@ -13,7 +13,7 @@
 class ModelObject {
 public:
     ModelObject();
-    ModelObject(Model* model);
+    ModelObject(std::shared_ptr<Model> model);
     /**
      * Moves the model with the given value
      * @param move the vec3 to move
@@ -51,12 +51,11 @@ public:
      */
     void scale(glm::vec3 scale,int index);
 
-    void setModel(Model *model);
     [[nodiscard]] const std::vector<glm::mat4> &getMatrices() const;
-    [[nodiscard]] Model *getModel() const;
+    [[nodiscard]] const std::shared_ptr<Model> &getModel() const;
 
 private:
-    Model* m_model;
+    std::shared_ptr<Model> m_model;
     std::vector<glm::mat4> m_matrices;
 };
 

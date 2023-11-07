@@ -1,11 +1,10 @@
 #include "PlayerTank.hpp"
 #include "TK/engine/events/Events.hpp"
+#include "manager/ResourceManager.hpp"
 
 PlayerTank::PlayerTank() {
     //TODO: Resource manager. Currently this is a memory leak but who cares
-    Model* model = new Model();
-    model->loadFromFile("rsc/models/test.tk");
-    m_tank = std::make_shared<ModelObject>(model);
+    m_tank = std::make_shared<ModelObject>(ResourceManager::get().getResource<Model>("rsc/models/test.tk"));
     Events::subscribe<KeyPressedEvent>([this](const KeyPressedEvent *event) {
        if(event->keyCode == GLFW_KEY_W) {
            this->up = true;

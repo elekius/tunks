@@ -33,7 +33,7 @@ void RenderWindow::display() {
         std::unordered_map<const Mesh*, std::vector<glm::mat4>> tmpMatrices;
         tmpMatrices.reserve(m_renderQueue.size());
         for (const auto& modelObject : m_renderQueue) {
-            const Model* model = modelObject->getModel();
+            const std::shared_ptr<Model> model = modelObject->getModel();
             if (!model) continue;
 
             const auto& modelMeshes = model->getMeshes();
