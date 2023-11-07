@@ -5,7 +5,6 @@
 #include "Game.hpp"
 #include "TK/engine/graphics/RenderWindow.hpp"
 #include "TK/engine/utils/Log.hpp"
-#include "TK/engine/events/Events.hpp"
 #include "manager/ResourceManager.hpp"
 
 Game::~Game() {

@@ -6,6 +6,7 @@
 #include "engine/debug/Instrumentor.hpp"
 
 RenderWindow::RenderWindow(int width, int height) {
+    TK_PROFILE_FUNCTION();
     initWindow(width, height);
     initOpenGL();
     initCamera();
@@ -21,6 +22,7 @@ RenderWindow::~RenderWindow() {
     glfwTerminate();
 }
 void RenderWindow::draw(ModelObject &modelObject) {
+    TK_PROFILE_FUNCTION();
     m_camera->update();
     m_renderQueue.push_back(&modelObject);
 }
@@ -75,6 +77,7 @@ void RenderWindow::display() {
 
 
 void RenderWindow::initWindow(int width, int height) {
+    TK_PROFILE_FUNCTION();
     glfwWindowHint(GLFW_FLOATING,GLFW_TRUE);
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
     m_window = glfwCreateWindow(width, height, "Tunks", nullptr, nullptr);
@@ -90,7 +93,7 @@ void RenderWindow::initOpenGL() {
     }
     TK_LOG("Engine")  << "Running with OpenGL version: " << glGetString(GL_VERSION);
     glEnable(GL_DEPTH_TEST);
-    //glfwSwapInterval(0);
+   // glfwSwapInterval(0);
 }
 
 void RenderWindow::initCamera() {

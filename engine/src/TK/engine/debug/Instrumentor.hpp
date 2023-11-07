@@ -9,40 +9,34 @@
 #include <mutex>
 #include <thread>
 
-struct ProfileResult
-{
+struct ProfileResult {
     std::string Name;
     long long Start, End;
     uint32_t ThreadID;
 };
 
-struct InstrumentationSession
-{
+struct InstrumentationSession {
     std::string Name;
 };
 
-class Instrumentor
-{
+class Instrumentor {
 private:
-    InstrumentationSession* m_CurrentSession;
+    InstrumentationSession *m_CurrentSession;
     std::ofstream m_OutputStream;
     int m_ProfileCount;
     std::mutex m_lock;
 public:
     Instrumentor()
-            : m_CurrentSession(nullptr), m_ProfileCount(0)
-    {
+            : m_CurrentSession(nullptr), m_ProfileCount(0) {
     }
 
-    void BeginSession(const std::string& name, const std::string& filepath = "results.json")
-    {
+    void BeginSession(const std::string &name, const std::string &filepath = "results.json") {
         m_OutputStream.open(filepath);
         WriteHeader();
-        m_CurrentSession = new InstrumentationSession{ name };
+        m_CurrentSession = new InstrumentationSession{name};
     }
 
-    void EndSession()
-    {
+    void EndSession() {
         WriteFooter();
         m_OutputStream.close();
         delete m_CurrentSession;
@@ -50,8 +44,7 @@ public:
         m_ProfileCount = 0;
     }
 
-    void WriteProfile(const ProfileResult& result)
-    {
+    void WriteProfile(const ProfileResult &result) {
         std::lock_guard<std::mutex> lock(m_lock);
 
         if (m_ProfileCount++ > 0)
@@ -73,65 +66,62 @@ public:
         m_OutputStream.flush();
     }
 
-    void WriteHeader()
-    {
+    void WriteHeader() {
         m_OutputStream << "{\"otherData\": {},\"traceEvents\":[";
         m_OutputStream.flush();
     }
 
-    void WriteFooter()
-    {
+    void WriteFooter() {
         m_OutputStream << "]}";
         m_OutputStream.flush();
     }
 
-    static Instrumentor& Get()
-    {
+    static Instrumentor &Get() {
         static Instrumentor instance;
         return instance;
     }
 };
 
-class InstrumentationTimer
-{
+class InstrumentationTimer {
 public:
-    InstrumentationTimer(const char* name)
-            : m_Name(name), m_Stopped(false)
-    {
+    InstrumentationTimer(const char *name)
+            : m_Name(name), m_Stopped(false) {
         m_StartTimepoint = now();
     }
 
-    ~InstrumentationTimer()
-    {
+    ~InstrumentationTimer() {
         if (!m_Stopped)
             Stop();
     }
 
-    void Stop()
-    {
+    void Stop() {
         auto endTimepoint = std::chrono::high_resolution_clock::now();
 
-        long long start = std::chrono::time_point_cast<std::chrono::microseconds>(m_StartTimepoint).time_since_epoch().count();
-        long long end = std::chrono::time_point_cast<std::chrono::microseconds>(endTimepoint).time_since_epoch().count();
+        long long start = std::chrono::time_point_cast<std::chrono::microseconds>(
+                m_StartTimepoint).time_since_epoch().count();
+        long long end = std::chrono::time_point_cast<std::chrono::microseconds>(
+                endTimepoint).time_since_epoch().count();
 
         uint32_t threadID = std::hash<std::thread::id>{}(std::this_thread::get_id());
-        Instrumentor::Get().WriteProfile({ m_Name, start, end, threadID });
+        Instrumentor::Get().WriteProfile({m_Name, start, end, threadID});
 
         m_Stopped = true;
     }
+
 private:
-    const char* m_Name;
+    const char *m_Name;
     std::chrono::time_point<std::chrono::high_resolution_clock> m_StartTimepoint;
     bool m_Stopped;
+
     static std::chrono::high_resolution_clock::time_point now() {
         std::this_thread::sleep_for(std::chrono::nanoseconds(1));
         return std::chrono::high_resolution_clock::now();
     }
 };
 
-//#define PROFILING
-#ifdef PROFILING
-#define TK_PROFILE_BEGIN_SESSION(name,filepath) Instrumentor::Get().BeginSession(name,filepath)
+#define PROFILING 1
+#if PROFILING
+#define TK_PROFILE_BEGIN_SESSION(name, filepath) Instrumentor::Get().BeginSession(name,filepath)
 #define TK_PROFILE_END_SESSION() Instrumentor::Get().EndSession()
 #define TK_PROFILE_SCOPE(name) InstrumentationTimer timer##__LINE__(name)
 #define TK_PROFILE_FUNCTION() TK_PROFILE_SCOPE(__PRETTY_FUNCTION__)

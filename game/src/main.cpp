@@ -10,13 +10,16 @@ void initResourceLoader();
 
 INITIALIZE_EASYLOGGINGPP
 
+
 int main(int argc, char *argv[]) {
     TK_INIT_LOG;
     initResourceLoader();
     if (!glfwInit()) {
         TK_LOG_F("Game") << "GLFW initialization failed";
     }
+    TK_PROFILE_BEGIN_SESSION("Startup","startup.json");
     Game game;
+    TK_PROFILE_END_SESSION();
     TK_PROFILE_BEGIN_SESSION("Gameloop","GameLoop.json");
     game.run();
     TK_PROFILE_END_SESSION();
