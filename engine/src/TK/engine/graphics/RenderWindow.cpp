@@ -1,11 +1,12 @@
-#include <glad/glad.h>
 #include "RenderWindow.hpp"
 #include "Model.hpp"
-#include "engine/utils/Log.hpp"
 #include "ModelObject.hpp"
+#include "engine/utils/Log.hpp"
 #include "engine/debug/Instrumentor.hpp"
+#include <glad/glad.h>
 
-RenderWindow::RenderWindow(int width, int height) {
+
+RenderWindow::RenderWindow(int width, int height) : m_lightPos(-1),m_window(nullptr){
     TK_PROFILE_FUNCTION();
     initWindow(width, height);
     initOpenGL();
@@ -82,7 +83,9 @@ void RenderWindow::initWindow(int width, int height) {
     glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, true);
     m_window = glfwCreateWindow(width, height, "Tunks", nullptr, nullptr);
     if (m_window == nullptr) {
-        TK_LOG_F("Engine") << "Window creation failed";
+        const char* errorDescription;
+        int errorCode = glfwGetError(&errorDescription);
+        TK_LOG_F("Engine") << "GLFW Initialization Error (" << errorCode << "): " << errorDescription;
     }
 }
 

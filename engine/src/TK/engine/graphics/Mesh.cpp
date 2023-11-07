@@ -31,8 +31,6 @@ void Mesh::create(std::shared_ptr<VertexBuffer> vertexBuffer, std::shared_ptr<Ma
     m_material = material;
 }
 
-Mesh::Mesh()  {}
+Mesh::Mesh()  = default;
 
-Mesh::~Mesh() {
-
-}
+Mesh::~Mesh() = default;

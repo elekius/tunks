@@ -3,63 +3,58 @@
 
 #include "glm/glm.hpp"
 #include "glm/gtc/matrix_transform.hpp"
+
 /**
- * A simple camera class that holds the view and the projection. Used for the projectionView
+ * @brief A simple camera class that holds the view and projection matrices.
+ *
+ * The Camera class is responsible for managing the view and projection matrices, which are crucial for
+ * rendering 3D scenes. It provides methods for camera manipulation and updates the view projection each frame.
  * @author ChikyuKido
  */
 class Camera {
 public:
     /**
-     * Creates a new camera with the given FOV and the given height and width for the ratio
-     * @param fov the fov of the camera
-     * @param width the width for the ratio
-     * @param height the height for the ratio
+     * @brief Creates a new camera with the given field of view (FOV) and aspect ratio.
+     *
+     * @param fov The field of view (FOV) of the camera.
+     * @param aspectRatio The aspect ratio (width / height) for the camera.
      */
     Camera(float fov, float aspectRatio);
-
-
-    /**
-     * Updates the view projection each frame
-     */
     virtual void update();
-    /**
-     * Resizes the camera to a new viewport.
-     * @param width
-     * @param height
-     */
-    void resize(int width,int height);
 
     /**
-     * Moves the camera with the given distance
-     * @param move the distance to move
+     * @brief Resizes the camera to a new viewport.
+     *
+     * @param width The new width of the viewport.
+     * @param height The new height of the viewport.
+     */
+    void resize(int width, int height);
+
+    /**
+     * @brief Moves the camera by the given distance.
+     *
+     * @param move The distance to move the camera.
      */
     void translate(glm::vec3 move);
 
     /**
-     * Rotates the camera along the y axis.
-     * @param degrees the angle in degrees
+     * @brief Rotates the camera along the specified axis by the given degrees.
+     *
+     * @param degrees The angle in degrees to rotate.
+     * @param axis The axis of rotation.
      */
-    void rotate(float degrees,glm::vec3 axis);
+    void rotate(float degrees, glm::vec3 axis);
 
-    /**
- * Creates the view projection for the model.
- * @return The combined view and projection
- */
     [[nodiscard]] const glm::mat4 &getViewProj() const;
-
-    /**
-     * Returns the view of the camera
-     * @return
-     */
     [[nodiscard]] const glm::mat4 &getView() const;
 
 protected:
-    glm::vec3 m_position;
-    glm::mat4 m_projection;
-    glm::mat4 m_view;
-    glm::mat4 m_viewProj; // cached result of view * projection
-    float m_aspectRatio;
-    float m_fov;
+    glm::vec3 m_position;  // The position of the camera.
+    glm::mat4 m_projection; // The projection matrix.
+    glm::mat4 m_view;       // The view matrix.
+    glm::mat4 m_viewProj;   // Cached result of view * projection.
+    float m_aspectRatio;   // The aspect ratio (width / height) of the camera.
+    float m_fov;           // The field of view (FOV) of the camera.
 };
 
 

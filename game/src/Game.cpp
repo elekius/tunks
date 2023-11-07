@@ -89,11 +89,7 @@ void openGLDebugCallback(GLenum source, GLenum type, GLuint id, GLenum severity,
                          const void *userParam) {
     TK_LOG("OpenGL")  << message;
 }
-
 void Game::init() {
-#ifdef DEBUG
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_FLAGS,SDL_GL_CONTEXT_DEBUG_FLAG);
-#endif
     glEnable(GL_DEBUG_OUTPUT);
     glEnable(GL_DEBUG_OUTPUT_SYNCHRONOUS);
     glDebugMessageCallback(openGLDebugCallback, nullptr);

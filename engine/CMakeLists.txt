@@ -30,8 +30,8 @@ set(SOURCE_FILES
         src/TK/engine/loader/ModelLoader.cpp
         src/TK/engine/loader/ModelLoader.hpp
         src/TK/engine/loader/ModelData.hpp
-        src/TK/engine/graphics/UniformBuffer.hpp
-        src/TK/engine/graphics/UniformBuffer.cpp
+        src/TK/engine/graphics/ShaderStorageBuffer.hpp
+        src/TK/engine/graphics/ShaderStorageBuffer.cpp
         "src/TK/engine/debug/Instrumentor.hpp"
         src/TK/engine/events/Events.hpp
         src/TK/engine/events/Events.cpp

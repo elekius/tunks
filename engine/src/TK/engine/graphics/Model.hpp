@@ -6,20 +6,30 @@
 #include "Mesh.hpp"
 
 /**
- * This class representing the 3D model which consists of meshes.
+ * @brief This class represents a 3D model consisting of meshes.
+ *
+ * A 3D model is composed of multiple meshes, each of which is a separate piece of the model.
+ * @see Mesh.hpp
  * @author ChikyuKido
  */
 class Model {
 public:
-    Model();
     /**
-     * Creates the meshes for the renderModel. The file should be in the TK file format from the TunksObjConverter
-     * @param path the path to the tk file
+     * @brief Default constructor for the Model class.
+     */
+    Model();
+
+    /**
+     * @brief Loads the meshes for the 3D model from a TK file.
+     *
+     * The TK file should be in the TK file format from the TunksObjConverter.
+     *
+     * @param path The path to the TK file.
      */
     void loadFromFile(const std::string& path);
     [[nodiscard]] const std::vector<std::shared_ptr<Mesh>> &getMeshes() const;
 
 private:
-    std::vector<std::shared_ptr<Mesh>> m_meshes;
+    std::vector<std::shared_ptr<Mesh>> m_meshes; // Vector of shared pointers to the model's meshes.
 };
 #endif

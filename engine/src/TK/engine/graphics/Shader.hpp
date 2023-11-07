@@ -8,33 +8,41 @@
 #include <unordered_map>
 
 /**
- * A simple Wrapper for a shader program.
+ * @brief A simple Wrapper for a shader program.
+ *
+ * This class provides a simple wrapper for managing shader programs, including loading shaders,
+ * setting uniform values, and binding/unbinding the shader program.
  * @author ChikyuKido
  */
 class Shader {
 public:
     /**
-     * Creates a new shader with the given vert and frag shader
-     * @param vertexShaderPath the path to the vertex shader
-     * @param fragmentShader the path to the fragment shader
+     * @brief Creates a new shader with the given vertex and fragment shaders.
+     *
+     * @param vertexShaderPath The path to the vertex shader source file.
+     * @param fragmentShaderPath The path to the fragment shader source file.
      */
-    Shader(const std::string &vertexShaderPath, const std::string &fragmentShader);
-
+    Shader(const std::string &vertexShaderPath, const std::string &fragmentShaderPath);
     virtual ~Shader();
 
     /**
-     * Binds the shader.
+     * @brief Binds the shader program for use in rendering.
      */
     void bind();
+
     /**
-     * unbind the shader
+     * @brief Unbinds the shader program.
      */
     void unbind();
-    /**
-     * Returns the shaderId
-     * @return
-     */
+
     [[nodiscard]] GLuint getShaderId() const;
+
+    /**
+     * @brief Get the location of a uniform variable in the shader.
+     *
+     * @param name The name of the uniform variable.
+     * @return The location of the uniform variable.
+     */
     GLint getUniformLocation(const std::string &name);
     void setUniformMatrix4fv(const std::string &name, const glm::mat4 &value);
     void setUniformVec3(const std::string &name, const glm::vec3 &value);
@@ -43,32 +51,34 @@ public:
     void setUniformBool(const std::string &name, const bool &value);
 
 private:
-    GLuint m_shaderId;
-    std::unordered_map<std::string,GLint> m_cachedUniforms;
+    GLuint m_shaderId; // The OpenGL shader program ID.
+    std::unordered_map<std::string, GLint> m_cachedUniforms; // Cache for uniform variable locations.
 
     /**
-     * Compiles the two shaders and create a single shader program.
-     * @param vertexShaderPath the path to the vertex shader
-     * @param fragmentShader the path to the fragment shader
-     * @return a opengl id for the shader program
+     * @brief Compiles the two shaders and creates a single shader program.
+     *
+     * @param vertexShaderPath The path to the vertex shader.
+     * @param fragmentShaderPath The path to the fragment shader.
+     * @return The OpenGL ID for the shader program.
      */
-    GLuint createShader(const std::string &vertexShaderPath, const std::string &fragmentShader);
+    GLuint createShader(const std::string &vertexShaderPath, const std::string &fragmentShaderPath);
 
     /**
-     * Compiles a vertex or fragment shader.
-     * @param shaderContent The shader source code
-     * @param type the type fragment or vertex shader
-     * @return a opengl id for a shader
+     * @brief Compiles a vertex or fragment shader from its source code.
+     *
+     * @param shaderContent The shader source code.
+     * @param type The shader type (vertex or fragment).
+     * @return The OpenGL ID for the compiled shader.
      */
     GLuint compile(const std::string &shaderContent, GLenum type);
 
     /**
-     * Reads the content of the path
-     * @param path the file with the shader contents
-     * @return the content of the file
+     * @brief Reads the content of a file specified by its path.
+     *
+     * @param path The file path to read.
+     * @return The content of the file as a string.
      */
     std::string readStringFromFile(const std::string &path);
 };
-
 
 #endif

@@ -3,53 +3,83 @@
 
 #include <glm/glm.hpp>
 #include "Model.hpp"
-
 /**
- * A simple wrapper for the Model. It contains a reference to the actual model and just stores a own vector of matrix.
- * Each matrix is for each mesh the model has. So you can transform each mesh like you want.
+ * @brief A simple wrapper for the Model. It contains a reference to the actual model
+ * and stores its own vector of matrices.
+ *
+ * Each matrix in the vector corresponds to a mesh within the model, allowing
+ * individual transformations for each mesh.
  * @see Model.hpp
  * @author ChikyuKido
  */
 class ModelObject {
 public:
-    ModelObject();
-    ModelObject(std::shared_ptr<Model> model);
     /**
-     * Moves the model with the given value
-     * @param move the vec3 to move
+     * @brief Default constructor for ModelObject.
+     */
+    ModelObject();
+
+    /**
+     * @brief Constructor for ModelObject with a specified model.
+     *
+     * @param model A shared pointer to the model associated with this ModelObject.
+     */
+    ModelObject(std::shared_ptr<Model> model);
+
+    /**
+     * @brief Moves the entire model with the given vector.
+     *
+     * @param move A 3D vector specifying the translation to apply to the model.
      */
     void translate(glm::vec3 move);
+
     /**
-     * Rotates the model in the given degrees in the given axis
-     * @param degrees the degrees to rotate
-     * @param axis the axis in which it should be rotated
+     * @brief Rotates the entire model by the given number of degrees around the specified axis.
+     *
+     * @param degrees The degrees to rotate.
+     * @param axis The axis around which to rotate.
      */
     void rotate(float degrees, glm::vec3 axis);
 
+    /**
+     * @brief Sets the rotation of the entire model to the given degrees around the specified axis.
+     *
+     * @param degrees The degrees to set the rotation to.
+     * @param axis The axis around which to set the rotation.
+     */
     void setRotation(float degrees, glm::vec3 axis);
 
     /**
-     * Scales the model.
-     * @param scale a vec3 to scale the model
+     * @brief Scales the entire model by the specified scaling factors.
+     *
+     * @param scale A 3D vector specifying the scaling factors.
      */
     void scale(glm::vec3 scale);
 
     /**
-     * Moves the mesh at the position index with the given value
-     * @param move the vec3 to move
+     * @brief Moves a specific mesh at the given index with the provided vector.
+     *
+     * @param move A 3D vector specifying the translation to apply to the mesh.
+     * @param index The index of the mesh to move.
      */
-    void translate(glm::vec3 move,int index);
+    void translate(glm::vec3 move, int index);
+
     /**
-     * Rotates the mesh at the position index in the given degrees in the given axis
-     * @param degrees the degrees to rotate
-     * @param axis the axis in which it should be rotated
+     * @brief Rotates a specific mesh at the given index by the specified degrees around the provided axis.
+     *
+     * @param degrees The degrees to rotate.
+     * @param axis The axis around which to rotate.
+     * @param index The index of the mesh to rotate.
      */
-    void rotate(float degrees, glm::vec3 axis,int index);
+    void rotate(float degrees, glm::vec3 axis, int index);
+
     /**
-     * Scales the mesh at the position index.
-     * @param scale a vec3 to scale the model
+     * @brief Scales a specific mesh at the given index by the specified scaling factors.
+     *
+     * @param scale A 3D vector specifying the scaling factors.
+     * @param index The index of the mesh to scale.
      */
-    void scale(glm::vec3 scale,int index);
+    void scale(glm::vec3 scale, int index);
 
     [[nodiscard]] const std::vector<glm::mat4> &getMatrices() const;
     [[nodiscard]] const std::shared_ptr<Model> &getModel() const;
