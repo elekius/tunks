@@ -3,7 +3,6 @@
 #include "manager/ResourceManager.hpp"
 
 PlayerTank::PlayerTank() {
-    //TODO: Resource manager. Currently this is a memory leak but who cares
     m_tank = std::make_shared<ModelObject>(ResourceManager::get().getResource<Model>("rsc/models/test.tk"));
     Events::subscribe<KeyPressedEvent>([this](const KeyPressedEvent *event) {
        if(event->keyCode == GLFW_KEY_W) {

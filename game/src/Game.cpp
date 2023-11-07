@@ -35,8 +35,6 @@ void Game::run() {
 
     m_tank = std::make_shared<PlayerTank>();
 
-    //   m_tank.scale(glm::vec3(0.1,0.1,0.1));
-
     ModelObject floor(ResourceManager::get().getResource<Model>("rsc/models/floor.tk"));
     floor.scale(glm::vec3(4));
     floor.rotate(90.0f,glm::vec3(-1,0,0));
@@ -55,11 +53,9 @@ void Game::run() {
         auto currentTime = std::chrono::high_resolution_clock::now();
         float deltaTime = std::chrono::duration<float>(currentTime - prevTime).count();
         prevTime = currentTime;
-//        m_window->getCamera()->rotate(100.0f*deltaTime,glm::vec3(0, -1, 0));
         glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-//        m_tank.rotate(10.0f * deltaTime, glm::vec3(0, -1, 0),2);
-//
+
         m_tank->draw(*m_window);
         m_tank->update(deltaTime);
 

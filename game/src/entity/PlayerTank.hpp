@@ -1,7 +1,3 @@
-//
-// Created by kido on 11/6/23.
-//
-
 #ifndef TUNKS_PLAYERTANK_HPP
 #define TUNKS_PLAYERTANK_HPP
 
@@ -9,7 +5,10 @@
 #include "TK/engine/graphics/ModelObject.hpp"
 #include "TK/engine/graphics/RenderWindow.hpp"
 #include "Tank.hpp"
-
+/**
+ *
+ * @author ChikyuKido
+ */
 class PlayerTank : public Tank{
 public:
     PlayerTank();
